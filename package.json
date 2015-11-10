@@ -1,0 +1,16 @@
+{
+  "name": "moheUI",
+  "title": "MoheUI",
+  "description": "MoheUI组件集合",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.1",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-qunit": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-lintspaces": "^0.7.0",
+    "grunt-string-replace": "^1.2.0"
+  }
+}
