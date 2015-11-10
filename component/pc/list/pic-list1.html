@@ -1,0 +1,238 @@
+<!DOCTYPE html><!--[if lt IE 7 ]><html class="ie6"><![endif]--><!--[if IE 7 ]><html class="ie7"><![endif]--><!--[if IE 8 ]><html class="ie8"><![endif]--><!--[if IE 9 ]><html class="ie9"><![endif]--><!--[if (gt IE 9)|!(IE)]><!--><html class=""><!--<![endif]--><head><meta charset="utf-8"><title>mohe平台组件开发页面</title><link rel="stylesheet" href="http://s1.qhimg.com/static/9f2be644da28ace0.css" /><script src="http://s9.qhimg.com/!4cd44b84/_360so_ob_loader.js"></script></head><body link="#0000cc"><div id="warper"><div id="container" class=""><div id="main"><ul class="result"><li class="res-list">
+<!-- code-start -->
+<style>
+.mohe-demo .mh-list-pic li {
+	float: left;
+	width: 114px;
+	padding: 0px 10px 15px;
+	overflow: hidden;
+	_display: inline;
+}
+.mohe-demo .mh-list-pic .mh-img {
+	padding: 5px;
+	border: 1px solid #eaeaea;
+}
+.mohe-demo .mh-list-pic .mh-cover {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 125px;
+	overflow: hidden;
+	color: #666;
+	text-decoration: none;
+	zoom: 1;
+}
+.mohe-demo .mh-list-pic .mh-mask-tit,
+.mohe-demo .mh-list-pic .mh-tit {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+}
+.mohe-demo .mh-list-pic .mh-mask-tit {
+	background-color: #000;
+	opacity: .4;
+	filter: alpha(opacity=40);
+}
+.mohe-demo .mh-list-pic .mh-tit {
+	color: #fff;
+	text-align: center;
+}
+.mohe-demo .mh-list-pic .mh-mask {
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	opacity: .3;
+	filter: alpha(opacity=30);
+}
+.mohe-demo .mh-list-pic .mh-desc {
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #fff;
+	opacity: .9;
+	filter: alpha(opacity=90);
+	color: #666;
+}
+.mohe-demo .mh-list-pic .mh-desc dt {
+	float: left;
+	clear: left;
+}
+.mohe-demo .mh-list-pic .mh-desc dd {
+	overflow: hidden;
+}
+.mohe-demo .mh-list-pic .mh-cover:hover .mh-mask,
+.mohe-demo .mh-list-pic .mh-cover:hover .mh-desc {
+	display: block;
+	cursor: pointer;
+}
+.mohe-demo .mh-list-pic .mh-cover:hover .mh-mask-tit,
+.mohe-demo .mh-list-pic .mh-cover:hover .mh-tit {
+	display: none;
+}
+.mohe-demo .mh-list-pic .mh-name {
+	text-align: center;
+	margin: 5px 8px 0;
+}
+.mohe-demo .mh-list-pic .mh-name a {
+	text-decoration: none;
+}
+.mohe-demo .mh-list-pic .mh-name a:hover {
+	text-decoration: underline;
+}
+.mohe-demo .mh-load-state {
+	height: 194px;
+	padding: 100px 0;
+	line-height: 32px;
+	color: #333;
+	font-size: 14px;
+	text-align: center;
+	display: none;
+}
+.mohe-demo .mh-loading {
+	display: block;
+}
+.mohe-demo .mh-loaded {
+	display: none;
+}
+.mohe-demo .mh-load-default {
+	height: 54px;
+	padding: 34px 0;
+}
+.mohe-demo .mh-load-default .mh-loading {
+	display: none;
+}
+.mohe-demo .mh-load-default .mh-loaded {
+	display: block;
+}
+.mohe-demo .mh-ico-loading {
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+	width: 32px;
+	height: 32px;
+	font-size: 0;
+	line-height: 32px;
+	vertical-align: middle;
+	background: url(http://p7.qhimg.com/t01d48f0da2e6a37bfe.gif) no-repeat left top;
+	margin-right: 10px;
+}
+.mohe-demo .mh-page-num {
+	display: none;
+}
+</style>
+<div class="mohe-demo">
+	<ul class="mh-list-pic g-clearfix">
+		<li>
+			<div class="mh-img">
+				<a href="##" class="mh-cover" target="_blank" data-md="" title="花千骨">
+					<img src="https://p.ssl.qhimg.com/t01e007387eb4130c46.jpg" width="104">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="##" title="花千骨" target="_blank" data-md="">花千骨</a>
+				<br/>
+				<span title="碧沫沫" class="g-c-dark"> 碧沫沫</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="##" class="mh-cover" target="_blank" data-md="" title="戮仙">
+					<img src="https://p.ssl.qhimg.com/t011e7493c018819ed4.jpg" width="104">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis"><a href="##" title="戮仙" target="_blank" data-md="">戮仙</a>
+				<br/><span title="萧鼎" class="g-c-dark"> 萧鼎</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="##" class="mh-cover" target="_blank" data-md="" title="盗墓笔记">
+					<img src="https://p.ssl.qhimg.com/t01393a4e2d3b7faa00.jpg" width="104">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="##" title="盗墓笔记" target="_blank" data-md="">盗墓笔记</a>
+				<br/><span title="就像候鸟忘记了岛屿" class="g-c-dark"> 就像候鸟忘记了岛屿</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="##" class="mh-cover" target="_blank" data-md="" title="大主宰">
+					<img src="https://p.ssl.qhimg.com/t01f281efa8b3cf01d0.jpg" width="104">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="##" title="大主宰" target="_blank" data-md="">大主宰</a>
+				<br/>
+				<span title="天蚕土豆" class="g-c-dark"> 天蚕土豆</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="##" class="mh-cover" target="_blank" data-md="" title="我欲封天">
+					<img src="https://p.ssl.qhimg.com/t019f71a7993302e607.jpg" width="104">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="##" title="我欲封天" target="_blank" data-md="">我欲封天</a>
+				<br/>
+				<span title="耳根" class="g-c-dark"> 耳根</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="##" class="mh-cover" target="_blank" data-md="" title="魔天记">
+					<img src="https://p.ssl.qhimg.com/t01a40fdd49c3bd1a45.jpg" width="104">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="##" title="魔天记" target="_blank" data-md="">魔天记</a>
+				<br/>
+				<span title="忘语" class="g-c-dark"> 忘语</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="##" class="mh-cover" target="_blank" data-md="" title="校花的贴身高手">
+					<img src="https://p.ssl.qhimg.com/t015d6f8db7e186b0f0.jpg" width="104">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="##" title="校花的贴身高手" target="_blank" data-md="">校花的贴身高手</a>
+				<br/>
+				<span title="鱼人二代" class="g-c-dark"> 鱼人二代</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="##" class="mh-cover" target="_blank" data-md="" title="莽荒纪">
+					<img src="https://p.ssl.qhimg.com/t01131d481d32d814fd.jpg" width="104">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="##" title="莽荒纪" target="_blank" data-md="">莽荒纪</a>
+				<br/>
+				<span title="我吃西红柿" class="g-c-dark"> 我吃西红柿</span>
+			</p>
+		</li>
+	</ul>
+</div>
+<!-- code-end -->
+</li></ul></div><div id="side"></div><div id="page"></div></div></div></body>

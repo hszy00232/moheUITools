@@ -1,0 +1,221 @@
+<!-- code-start --><style>
+	.mohe-demo .mh-flex{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+	}
+	.mohe-demo .mh-item{
+		-webkit-box-flex:1;
+		-webkit-flex:1;
+		flex:1;
+	}
+	/*list*/
+	.mohe-demo .mh-list{
+		min-height: 50px;
+		line-height: 50px;
+		text-align: center;
+	}
+	.mohe-demo .mh-list li {
+		vertical-align: middle;
+		padding:12px 0;
+		border-bottom: 1px solid #eaeaea;
+		line-height: 20px;
+	}
+	.mohe-demo .mh-list-item-default li{
+		height: 20px;
+	}
+	.mohe-demo .mh-score-left{
+		text-align: right;
+		width: 50px;
+	}
+	.mohe-demo .mh-score-right {
+		text-align: left;
+		width: 50px;
+	}
+
+	.mohe-demo .mh-status {
+		text-align: center;
+		width: 90px;
+	}
+
+	.mohe-demo .mh-status span {
+		vertical-align: middle;
+		display: inline-block;
+		padding: 2px;
+		font-size: 14px;
+		line-height: 14px;
+		color: #fff;
+		border-radius: 2px;
+	}
+
+	.mohe-demo .mh-status span.mh-status-zhibo {
+		background-color: #3eaf1e;
+		font-size: 12px;
+	}
+	.mohe-demo .mh-status span.mh-status-zhibo-f {
+		background-color: #3eaf1e;
+		padding: 3px 4px;
+		margin-top: 31px;
+	}
+
+	.mohe-demo .mh-status span.mh-status-over{
+		background-color: #d0d0d0;
+		font-size: 12px;
+	}
+	.mohe-demo .mh-status span.mh-status-over-f{
+		background-color: #d0d0d0;
+		padding: 3px 4px;
+		margin-top: 31px;
+	}
+
+	.mohe-demo .mh-status span.mh-status-notstart{
+		background-color: none;
+		color: #222;
+		font-size: 12px;
+	}
+	.mohe-demo .mh-status span.mh-status-notstart-f{
+		background-color: #d0d0d0;
+		padding: 3px 4px;
+	}
+
+
+	.mohe-demo .mh-player {
+		text-align: center;
+		width: 33%;
+		font-size: 14px;
+	}
+
+	.mohe-demo .mh-score-first{
+		font-size: 22px;
+		color: #333;
+		line-height: 1.8;
+		margin-top: 22px;
+		display: inline-block;
+	}
+
+	.mohe-demo span.mh-score{
+		font-size: 18px;
+	}
+
+	.mohe-demo .mh-notstart {
+		color: #3eaf1e;
+	}
+
+	.mohe-demo .mh-hide-item {
+		display: none;
+	}
+
+	.mohe-demo .mh-more {
+		height: 44px;
+		line-height: 44px;
+		border-top: none;
+		background-color: #fff;
+		color: #666;
+		border-bottom: 1px solid #eaeaea;
+	}
+	.mohe-demo .mh-f16{
+		font-size: 16px
+	}
+	.mohe-demo .mh-list-item-link{
+		color: #222;
+	}
+</style>
+<div class="mohe-demo">
+	<div class="js-mh-list-nba mh-list">
+		<a href="#" data-md='{"p":"item1"}' class="mh-list-item-link">
+			<ul class="mh-flex">
+				<li class="mh-player mh-item">
+					<div><img width="55" height="55" alt="logo" src="http://p3.qhimg.com/t01a540cb8f7dae8bd7.png">
+					</div><span class="mh-f16">步行者</span>
+				</li>
+				<li class="mh-score-left"><span class="mh-score-first">94</span>
+				</li>
+				<li class="mh-status"><span class="mh-status-zhibo-f">直播中</span>
+				</li>
+				<li class="mh-score-right"><span class="mh-score-first">103</span>
+				</li>
+				<li class="mh-player mh-item">
+					<div><img width="55" height="55" alt="logo" src="http://p6.qhimg.com/t0190ed8c80f7525b15.png">
+					</div><span class="mh-f16">公牛</span>
+				</li>
+			</ul>
+		</a>
+		<a href="#" class="mh-list-item-link">
+			<ul class="mh-flex mh-list-item-default ">
+				<li class="mh-player mh-item"><span>森林狼</span>
+				</li>
+				<li class="mh-score-left"><span class="mh-score">88</span>
+				</li>
+				<li class="mh-status"><span class="mh-status-zhibo">直播中</span>
+				</li>
+				<li class="mh-score-right"><span class="mh-score">106</span>
+				</li>
+				<li class="mh-player mh-item"><span>雄鹿</span>
+				</li>
+			</ul>
+		</a>
+		<a href="#" data-md='{"p":"item3"}' class="mh-list-item-link">
+			<ul class="mh-flex mh-list-item-default ">
+				<li class="mh-player mh-item"><span>太阳</span>
+				</li>
+				<li class="mh-score-left"><span class="mh-score">104</span>
+				</li>
+				<li class="mh-status"><span class="mh-status-over">已结束</span>
+				</li>
+				<li class="mh-score-right"><span class="mh-score">84</span>
+				</li>
+				<li class="mh-player mh-item"><span>马刺</span>
+				</li>
+			</ul>
+		</a>
+		<a href="#" data-md='{"p":"item4"}' class="mh-list-item-link">
+			<ul class="mh-flex mh-list-item-default ">
+				<li class="mh-player mh-item"><span>雷霆</span>
+				</li>
+				<li class="mh-score-left"><span class="mh-score">113</span>
+				</li>
+				<li class="mh-status"><span class="mh-status-over">已结束</span>
+				</li>
+				<li class="mh-score-right"><span class="mh-score">102</span>
+				</li>
+				<li class="mh-player mh-item"><span>爵士</span>
+				</li>
+			</ul>
+		</a>
+		<a href="#" data-md='{"p":"item5"}' class="mh-list-item-link">
+			<ul class="mh-flex mh-list-item-default js-hide-item mh-hide-item">
+				<li class="mh-player mh-item"><span>勇士</span>
+				</li>
+				<li class="mh-score-left"><span class="mh-score">95</span>
+				</li>
+				<li class="mh-status"><span class="mh-status-over">已结束</span>
+				</li>
+				<li class="mh-score-right"><span class="mh-score">130</span>
+				</li>
+				<li class="mh-player mh-item"><span>快船</span>
+				</li>
+			</ul>
+		</a>
+		<a href="#more" data-md='{"p":"more"}' class="mohe-fold mohe-more js-mh-more mh-more" title="查看全部比赛" opentitle="收起"></a>
+	</div>
+</div>
+<script type="text/javascript">
+	_loader.use('zepto',function(){
+	    var $scope = $('.mohe-demo'),
+			more = $('.js-mh-more',$scope);
+
+		more.on("click",function(e){
+			e.preventDefault();
+			var self = $(this);
+			self.toggleClass("mohe-open");
+
+			if(self.hasClass("mohe-open")){
+				self.parent().find(".js-hide-item").removeClass("mh-hide-item");
+			} else {
+				self.parent().find(".js-hide-item").addClass("mh-hide-item");
+			}
+
+		});
+	})
+</script>
+<!-- code-end -->

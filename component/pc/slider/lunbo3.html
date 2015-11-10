@@ -1,0 +1,369 @@
+<!-- code-start -->
+<style type="text/css">
+		.mohe-demo .mh-views{
+			position: relative;
+			width: 265px;
+			height: 198px;
+			border: 1px solid #eaeaea;
+			overflow: hidden;
+		}
+		.mohe-demo .mh-arraw{
+			position: absolute;
+			display: block;
+			width: 16px;
+			height: 24px;
+			top: 70px;
+		}
+		.mohe-demo .mh-prev{
+			background: url(http://p0.qhimg.com/t01e3bde7ff93dd6c32.png) no-repeat;
+			_background: none;
+			_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src="http://p0.qhimg.com/t01e3bde7ff93dd6c32.png");
+			left: 8px;
+		}
+		.mohe-demo .mh-next{
+			background: url(http://p9.qhimg.com/t01945ca9dd1810d2cc.png) no-repeat;
+			_background: none;
+			_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src="http://p9.qhimg.com/t01945ca9dd1810d2cc.png");
+			right: 8px
+		}
+		.mohe-demo .mh-prev:hover{
+			background: url(http://p2.qhimg.com/t01dfc03c2cbe4f1d11.png) no-repeat;
+			_background: none;
+			_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src="http://p2.qhimg.com/t01dfc03c2cbe4f1d11.png");
+			left: 8px;
+		}
+		.mohe-demo .mh-next:hover{
+			background: url(http://p0.qhimg.com/t013e3e969359630039.png) no-repeat;
+			_background: none;
+			_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src="http://p0.qhimg.com/t013e3e969359630039.png");
+			right: 8px
+		}
+		.mohe-demo .mh-items,
+		.mohe-demo .mh-item,
+		.mohe-demo .mh-mask,
+		.mohe-demo .mh-more{
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.mohe-demo .mh-items{
+			width: 265px;
+			height: 198px;
+		}
+		.mohe-demo .mh-item{
+			background: #fff;
+			display: none;
+		}
+		.mohe-demo .mh-items .mh-active{
+			display: block;
+		}
+		.mohe-demo .mh-mask,
+		.mohe-demo .mh-more{
+			width: 265px;
+			height: 166px;
+		}
+		.mohe-demo .mh-mask{
+			background: #000;
+			opacity: 0.5;
+			-webkit-filter: opacity(opacity=50);
+			-o-filter: opacity(opacity=50);
+			filter: opacity(opacity=50);
+		}
+		.mohe-demo .mh-more{
+			text-align: center;
+			font: 14px/166px "Microsoft Yahei";
+			color: #fff;
+		}
+		.mohe-demo .mh-nums{
+			position: absolute;
+			left: 0;
+			bottom: 37px;
+			width: 100%;
+			text-align: center;
+		}
+		.mohe-demo .mh-nums .mh-num{
+			display: inline-block;
+			cursor: pointer;
+			width: 17px;
+			height: 15px;
+			line-height: 15px;
+			text-indent: -18px;
+			text-align: left;
+			overflow: hidden;
+			opacity: .8;
+			color: #fff;
+			-webkit-filter: alpha(opacity=80);
+			-o-filter: alpha(opacity=80);
+			filter: alpha(opacity=80);
+			background:#000 url(http://p0.qhimg.com/t013b5bff7cc333049f.png) no-repeat;
+		}
+		.mohe-demo .mh-nums .mh-num-2{
+			background-position: -21px 0;
+		}
+		.mohe-demo .mh-nums .mh-num-3{
+			background-position: -42px 0;
+		}
+		.mohe-demo .mh-nums .mh-num-4{
+			background-position: -63px 0;
+		}
+		.mohe-demo .mh-nums .mh-num-omit{
+			background-position: -84px 0;
+		}
+		.mohe-demo .mh-nums .mh-active{
+			background-color: #3eaf0e;
+		}
+		.mohe-demo .mh-item .mh-img{
+			display: block;
+		}
+		.mohe-demo .mh-item .mh-desc{
+			width: 265px;
+			height: 32px;
+			font: 14px/32px "Microsoft Yahei";
+			color: #333;
+			text-align: center;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+</style>
+<div class="mohe-demo">
+	<!-- start: onebox内容 -->
+	<div class="mh-views">
+		<div class="mh-items">
+			<div class="mh-item mh-active">
+				<img src="http://p2.qhimg.com/t01fca9881da4ce9dcc.jpg" alt="" class="mh-img" width="265" height="166" />
+				<p class="mh-desc">小编疯语：杀人越货的罪犯连续神秘死亡，人们将替天行道惩治恶人的基拉奉为救世主，警方对之束手无策。专门解决奇诡事件的天才少年L推断，基拉有95.5%的可能性身在日本，于是他离开洛杉矶飞赴日本。临行之前，L心中浮起淡淡的预感——自己可能再也回不来了。</p>
+			</div>
+			<div class="mh-item">
+				<img src="http://p6.qhimg.com/t01c36666069e7d7b39.jpg" alt="" class="mh-img" width="265" height="166" />
+				<p class="mh-desc">影片类型：剧情,悬疑</p>
+			</div>
+			<div class="mh-item">
+				<img src="http://p3.qhimg.com/t0166ed7d2a90b37f0f.jpg" alt="" class="mh-img" width="265" height="166" />
+				<p class="mh-desc">《死亡笔记：L终章·最后的23天》</p>
+			</div>
+			<div class="mh-item">
+				<img src="http://p7.qhimg.com/t011ef4f3fd062e5703.jpg" alt="" class="mh-img" width="265" height="166" />
+				<p class="mh-desc">电影公司LOGO（本故事为死亡笔记番外篇。与死亡笔记正剧故事没有重合，只是存在时间上的接入点）</p>
+			</div>
+			<div class="mh-item">
+				<img src="http://p7.qhimg.com/t011ef4f3fd062e5703.jpg" alt="" class="mh-img" width="265" height="166" />
+				<div class="mh-mask"></div>
+				<a href="#" class="mh-more">查看更多图解&gt;&gt;</a>
+				<p class="mh-desc">美国洛杉矶街头</p>
+			</div>
+		</div>
+		<div class="mh-nums">
+			<span class="mh-num mh-active">1</span>
+			<span class="mh-num mh-num-2">2</span>
+			<span class="mh-num mh-num-3">3</span>
+			<span class="mh-num mh-num-4">4</span>
+			<span class="mh-num mh-num-omit">...</span>
+		</div>
+		<a href="#prev" class="mh-arraw mh-prev"></a>
+		<a href="#next" class="mh-arraw mh-next"></a>
+	</div>
+	<!-- end: onebox内容 -->
+</div>
+<script>
+	_loader.use('jquery',function(){
+		var imgLen = 5;
+		(function($){
+			var Slider = function(){
+				var _ = this;
+
+				// default config
+				_.conf = {
+					container: '.mh-views',   // css selector (string)
+					items: '.mh-items',    // css selector (string)
+					item: '.mh-item',  // css selector (string)
+
+					speed: 500,
+					delay: 3000,
+
+					autoplay: true,  // enable autoplay on initialisation (boolean)
+					pause: true,  // pause on hover (boolean)
+
+					dots: true, // display dots pagination (boolean)
+					arraws: true, // display prev|next arraws (boolean)
+				};
+
+				_.el = null;
+				_.ul = null;
+				_.li = null;
+
+				_.dots = null;
+
+				_.total = null;
+				_.cur = 0;
+				_.timer = null;
+
+				_.max = [0, 0];
+
+				_.init = function(config){
+
+					_.conf = $.extend(_.conf, config);
+
+					_.el = $(_.conf.container);
+					_.ul = $(_.conf.items, _.el);
+					_.li = $(_.conf.item, _.ul);
+
+					_.max = [ _.el.outerWidth()|0, _.el.outerHeight()|0 ];
+					_.total = _.li.length;
+					_.cur = 0;
+					_.timer = null;
+
+					_.dots = _.el.find('.mh-nums .mh-num');
+					_.arraws = _.el.find('.mh-arraw');
+
+					if(_.conf.autoplay){
+						_.play();
+					}else{
+						_.conf.pause = false;
+					}
+
+					if(_.conf.pause){
+						_.ul.hover(function(){
+							_.stop();
+						}, function(){
+							_.play();
+						});
+
+						_.arraws.hover(function(){
+							_.stop();
+						}, function(){
+							_.play();
+						});
+
+						if(_.conf.dots){
+							_.dots.hover(function(){
+								var me = $(this),
+									idx = me.index();
+
+								_.stop();
+								if(idx == _.cur){
+									return;
+								}
+								_.to(idx);
+							},function(){
+								_.play();
+							});
+						}else{
+							_.el.find('.mh-nums').remove();
+						}
+
+					}else{
+
+						if(_.conf.dots){
+							_.dots.hover(function(){
+								var me = $(this),
+									idx = me.index();
+
+								if(idx == _.cur){
+									return;
+								}
+								_.to(idx);
+							});
+						}else{
+							_.el.find('.mh-nums').remove();
+						}
+					}
+
+					if(_.conf.arraws){
+						$('.mh-prev', _.el).click(function(e){
+							e.preventDefault();
+							_.prev();
+						});
+
+						$('.mh-next', _.el).click(function(e){
+							e.preventDefault();
+							_.next();
+						});
+					}else{
+						_.el.find('.mh-arraw').remove();
+					}
+				};
+
+				_.play = function(){
+					_.timer = setInterval(function(){
+						_.to( _.cur+1 );
+						// 最后界面停留5秒
+						if(_.cur == imgLen - 1){
+							_.stop();
+							_.conf.delay = 5000;
+							_.play();
+						}else{
+							_.stop();
+							_.conf.delay = 3000;
+							_.play();
+						}
+						// console.log([_.cur,_.conf.delay]);
+					}, _.conf.delay|0);
+				};
+
+				_.stop = function(){
+					_.timer = clearInterval(_.timer);
+				};
+
+				_.prev = function(){
+					_.to(_.cur-1, -1);
+				};
+				_.next = function(){
+					_.to(_.cur+1, 1);
+				};
+
+				// move to this index
+				_.to = function(next, dir){
+
+					if(next==-1){
+						next = _.total-1;
+					}
+					if(next==_.total){
+						next = 0;
+					}
+
+					if(!dir){
+						var dir = -1;
+						if(next>_.cur){
+							dir = 1;
+						}
+					}
+
+					var from = _.li.eq(_.cur),
+						to = _.li.eq(next);
+
+					var offset = from.width()*dir;
+
+					to.css('left', offset +'px').show();
+
+					//stop([clearQueue], [jumpToEnd])   默认 stop(false, false)
+					from.stop(true,true).animate({
+						'left': -1*offset + 'px'
+					}, _.conf.speed);
+
+					to.stop(true,true).animate({
+						'left': 0
+					}, _.conf.speed);
+
+					_.dots.eq(_.cur).toggleClass('mh-active');
+					_.cur = next;
+					_.dots.eq(_.cur).toggleClass('mh-active');
+				};
+			};
+
+			if( !$.MoheUI ){
+				$.MoheUI = {};
+			}
+			$.MoheUI.Slider = function(){
+				var len = arguments.length;
+				for(var i=0; i<len; i++){
+					(new Slider()).init(arguments[i]);
+				}
+			};
+
+		})(jQuery);
+
+		$.MoheUI.Slider({container:'.mohe-demo .mh-views'});
+	});
+</script>
+<!-- code-end -->

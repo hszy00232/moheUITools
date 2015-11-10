@@ -1,0 +1,109 @@
+<style>
+	.mohe-demo .mh-pageCont {
+		width:505px;
+		text-align:center;
+		padding:15px;
+	}
+	.mohe-demo .mh-pageCont p {
+		padding:40px;
+		text-align:center;
+	}
+	/* .mh-page.css */
+	.mohe-demo .mh-pageCont .mh-page {
+		zoom:1;
+		overflow:hidden;
+		display:inline-block;
+		list-style-type:none;
+		text-align:center;
+		width:370px;
+		margin:0 auto;
+	}
+	.mohe-demo .mh-pageCont .mh-page li {
+		float:left;
+		margin:0 5px 0 0;
+	}
+	.mohe-demo .mh-pageCont .mh-page a {
+		font-family:'arial';
+		text-decoration:none;
+		display:block;
+		padding:2px 7px;
+		border:1px #EEEEEE solid;
+	}
+	.mohe-demo .mh-pageCont .mh-page .mh-ellipsis a {
+		border:none;
+	}
+	.mohe-demo .mh-pageCont .mh-page .mh-next {
+		margin:0;
+	}
+	.mohe-demo .mh-pageCont .mh-page .mh-public a {
+		color:#333333;
+		border:1px #FFFFFF solid;
+	}
+	.mohe-demo .mh-pageCont .mh-page .mh-sel {
+		color:#333333;
+		border:1px #FFFFFF solid;
+		cursor:default;
+	}
+</style>
+<div class="mohe-demo">
+	<div class="mh-pageCont mohe-wrap">
+		<p>测试数据1</p>
+		<ul class="mh-page js-page"></ul>
+	</div>
+</div>
+<script>
+	_loader.add('__mohe__MetPage__','http://s9.qhimg.com/!3d4882b5/__mohe__MetPage__.js');
+	_loader.use('jquery,__mohe__MetPage__', function(){
+		/**
+			*   Onebox 分页组件 - 小生爱
+			*   参数
+			*       sumPage     总页数
+			*       prev        上一页class
+			*       next        下一页class
+			*       elPage      数字class
+			*       sel         选中分页样式
+			*       box         ul节点
+			*       callBack    回调Ajax接口
+		*/
+		// 分页一
+		new __mohe__MetPage__({
+			// 总页数
+			sumPage : 15,
+			// 上一页class
+			prev : '.js-prev',
+			// 下一页class
+			next : '.js-next',
+			// 数字节点class
+			elPage : '.js-p',
+			// 选中分页的样式
+			sel : 'mh-sel',
+			// 父节点
+			box : $('.js-page'),
+			// 回调Ajax
+			callBack : ajax
+		});
+
+		// 分页二
+		new __mohe__MetPage__({
+			// 总页数
+			sumPage : 12,
+			// 上一页class
+			prev : '.js-prev',
+			// 下一页class
+			next : '.js-next',
+			// 数字节点class
+			elPage : '.js-p',
+			// 选中分页的样式
+			sel : 'mh-sel',
+			// 父节点
+			box : $('.js-page2'),
+			// 回调Ajax
+			callBack : ajax
+		});
+
+		// 测试回调的函数
+		function ajax(num){
+			console.log('这是ajax'+num);
+		};
+	});
+</script>

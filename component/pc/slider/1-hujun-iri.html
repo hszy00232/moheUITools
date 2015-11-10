@@ -1,0 +1,124 @@
+<style type="text/css">
+	.mohe-demo .mh-ui-slide-screen {
+		overflow: hidden;
+		position: relative;
+		height: 80px;
+	}
+	.mohe-demo .mh-ui-slide-screen .mh-ui-slider-item {
+		position: absolute;
+		left: -100%;
+		display: none;
+	}
+	.mohe-demo .mh-ui-slide-screen .mh-ui-first-item {
+		display: block;
+		left: 0px;
+	}
+	.mohe-demo .mh-ui-slide-screen h3 {
+		margin: 0 0 10px;
+	}
+	.mohe-demo .mh-ui-ops{
+		position: absolute;
+		top:0;
+		right:0;
+	}
+	.mohe-demo .mh-ui-ops a {
+		display: inline-block;
+		width: 14px;
+		height: 16px;
+		background: url(http://p6.qhimg.com/t010d36354a76e4923d.png) no-repeat;
+		text-indent: -99em;
+	}
+	.mohe-demo .mh-ui-ops .mh-ui-prev {
+		background-position:  0 -25px;
+	}
+	.mohe-demo  .mh-ui-ops .mh-ui-prev:hover {
+		background-position:  -16px -25px;
+	}
+	.mohe-demo  .mh-ui-ops .mh-ui-next {
+		background-position:  0 -41px;
+	}
+	.mohe-demo .mh-ui-ops .mh-ui-next:hover {
+		background-position:  -16px -41px;
+	}
+</style>
+
+<div class="mohe-demo">
+	<!-- start: onebox内容 -->
+	<div class="mh-ui-slide-screen mh-ui-js-slider">
+		<div class="mh-ui-slider-item mh-ui-first-item">
+			<h4>360搜索郑重承诺：</h4>
+			<p>您看到的搜索结果中，不会出现医疗类广告。</p>
+			<p>您看到的搜索结果中，不会出现医疗类广告。</p>
+			<p>您看到的搜索结果中，不会出现医疗类广告。</p>
+		</div>
+		<div class="mh-ui-slider-item">
+			<h4>医疗类广告有何不同？</h4>
+			<p>了解寄生在搜索引擎上的“灰色产业链”</p>
+		</div>
+		<div class="mh-ui-slider-item">
+			<h4>搜索引擎的社会责任</h4>
+			<p>拒绝虚假医疗广告，360搜索真心为你。</p>
+		</div>
+		<div class="mh-ui-slider-item">
+			<h4>新浪微博</h4>
+			<p>新浪微博新浪微博新浪微博新浪微博。</p>
+		</div>
+		<div class="mh-ui-slider-item">
+			<h4>人人网</h4>
+			<p>校内校内校内校内校内校内校内</p>
+		</div>
+		<div class="mh-ui-ops mh-ui-js-ops">
+			<a class="mh-ui-prev" href="###pref" title="上一页">上一页</a>
+			<a class="mh-ui-next" href="###next" title="下一页">下一页</a>
+		</div>
+	</div>
+	<!-- end: onebox内容 -->
+</div>
+<script type="text/javascript">
+_loader.use("jquery",function(){
+	var $context = $('.mohe-demo'),
+		pages = $context.find('.mh-ui-js-slider .mh-ui-slider-item'),
+		totalPage = pages.length,
+		curPage = 0,
+		pageWidth = $context.find('.mh-ui-slide-screen').width();
+	// 点击切换
+	$context.delegate('.mh-ui-js-ops a','click',function(e){
+		e.preventDefault();
+		var action = $(this).attr('class');
+		sliderPage(action);
+	});
+
+	function sliderPage(action){
+		var startPage = $(pages[curPage]);
+		var direction = action=='mh-ui-next'?1:-1;
+		curPage = (curPage + direction + totalPage ) % totalPage;
+		var endPage = $(pages[curPage]);
+
+		var shiftWidth = direction * pageWidth;
+		endPage.css('left', shiftWidth + 'px').show();
+		startPage.stop().animate({
+			'left': -shiftWidth
+		}, 300, function(){
+			//startPage.hide();
+		});
+
+		endPage.stop().animate({
+			'left': 0
+		}, 300);
+	}
+	// 自动轮转
+	var pageScrollTimer,
+		playing = true;
+	pageScrollTimer = setInterval(function(){
+		if (playing) {
+			sliderPage('mh-ui-next');
+		}
+	}, 8000);
+	$context.hover(function(){
+			playing = false;
+		}, function(){
+			playing = true;
+		}
+	);
+});
+</script>

@@ -1,0 +1,166 @@
+<style>
+.mohe-demo .mohe-wrap{
+	padding: 15px;
+}
+/* filter部分 */
+.mohe-demo .mh-ui-filter{
+	margin-bottom: 10px;
+}
+.mohe-demo .mh-ui-filter-item{
+	margin-bottom: 10px;
+	line-height: 22px;
+}
+.mohe-demo .mh-ui-cate-name{
+	float: left;
+	width: 50px;
+	color: #666;
+}
+.mohe-demo .mh-ui-cate-list{
+	margin-left: 50px;
+	overflow: hidden;
+}
+.mohe-demo .mh-ui-cate-item{
+	float: left;
+	padding: 0px 5px;
+	margin-right: 5px;
+	height: 22px;
+}
+.mohe-demo .mh-ui-cate-active{
+	color: #fff;
+	background: #257FDB;
+	border-radius: 2px;
+}
+/* 正在加载图标 */
+.mohe-demo .mh-ui-loading{
+	height: 32px;
+	padding: 34px 0;
+
+	line-height: 32px;
+	color: #333;
+	font-size: 14px;
+	text-align: center;
+
+	display: none;
+}
+.mohe-demo .mh-ui-icon-loading{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin-right: 10px;
+
+	font-size: 0;
+	vertical-align: middle;
+	background: url(http://p1.qhimg.com/t01d48f0da2e6a37bfe.gif) no-repeat left top;
+}
+/* 正文内容部分 */
+.mohe-demo .mh-ui-content{
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+</style>
+
+<div class="mohe-demo">
+	<div class="cont mohe-wrap">
+		<div class="mh-ui-filter">
+			<dl class="mh-ui-filter-item gclearfix" data-cate="filter1">
+				<dt class="mh-ui-cate-name">类别1：</dt>
+				<dd class="mh-ui-cate-list gclearfix">
+					<a href="#filter1" class="mh-ui-cate-item mh-ui-cate-active">全部</a>
+					<a href="#filter1" class="mh-ui-cate-item">中国</a>
+					<a href="#filter1" class="mh-ui-cate-item">德国</a>
+					<a href="#filter1" class="mh-ui-cate-item">巴西</a>
+					<a href="#filter1" class="mh-ui-cate-item">荷兰</a>
+				</dd>
+			</dl>
+			<dl class="mh-ui-filter-item gclearfix" data-cate="filter2">
+				<dt class="mh-ui-cate-name">类别2：</dt>
+				<dd class="mh-ui-cate-list gclearfix">
+					<a href="#filter2" class="mh-ui-cate-item mh-ui-cate-active">全部</a>
+					<a href="#filter2" class="mh-ui-cate-item">足球</a>
+					<a href="#filter2" class="mh-ui-cate-item">篮球</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="mh-ui-loading js-loading">
+			<i class="mh-ui-icon-loading"></i>正在为您努力加载中...
+		</div>
+		<div class="mh-ui-content js-ajax-wrap">
+			<!-- 这里可以放异步模板-->
+		</div>
+	</div>
+</div>
+
+<script>
+_loader.use("jquery",function(){
+	/* 初始化参数*/
+	var cate = ["fliter1","filter2"],
+		params = {
+			"filter1" : "全部",
+			"filter2" : "全部"
+		};
+
+	var context = $(".mohe-demo");
+
+	function activeCate(_this){
+		_this.addClass("mh-ui-cate-active").siblings(".mh-ui-cate-item").removeClass("mh-ui-cate-active");
+	}
+	/* 获取选中的filter值*/
+	function getFilterData(_this){
+		var cate = _this.parents(".mh-ui-filter-item").attr("data-cate");
+		params[cate] = $.trim(_this.text());
+	}
+	/* 获取异步数据*/
+	var loading = $(".js-loading", context),
+		cont = $(".js-ajax-wrap", context);
+	var _data = {};
+	function getAjaxData(){
+		loading.show();
+		cont.hide();
+		/* 这部分也可根据需要进行调整*/
+		_data = {
+				"query": "yourQuery",
+				"url": "yourUrl",
+				"type": "yourType",
+				"src": "onebox",
+				"addInfo": "yourAddInfo",
+				"tpl": 1
+			}
+		$.ajax({
+			url: "http://open.onebox.so.com/dataApi",
+			dataType: "jsonp",
+			data: _data,
+			success: function(data){
+				if(data && data.html){
+					loading.hide();
+					cont.html(data.html).show();
+				}
+			}
+		},{timeout:3000});
+	}
+	/* 我是一个测试函数*/
+	function testIt(){
+		var str = "";
+		for(var i in params){
+			str += i + "：" + params[i] + "&";
+		}
+		cont.html(str);
+	}
+	context.on("click",".mh-ui-cate-item",function(e){
+		e.preventDefault();
+
+		var _this = $(this);
+		if(!_this.hasClass("mh-ui-cate-active")){
+
+			activeCate(_this);
+			getFilterData(_this);
+
+			/*真正需要时直接取掉注释即可*/
+			//getAjaxData();
+
+			testIt();
+		}
+	});
+	testIt();
+});
+</script>

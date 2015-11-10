@@ -1,0 +1,49 @@
+<style>
+	.mohe-demo .mh-ui-cont{
+		max-height: 208px;
+		font-size: 15px;
+		overflow: hidden;
+		line-height:26px;
+	}
+	.mohe-demo .mh-ui-fold-more{
+		max-height: 100%;
+	}
+
+</style>
+<div class="mohe-demo">
+	<div class="mohe-cont">
+		<p class="mh-ui-cont">
+			丙辰中秋，欢饮达旦，<br/>
+			大醉，作此篇，<br/>
+			兼怀子由。明月几时有？<br/>
+			把酒问青天。不知天上宫阙，<br/>
+			今夕是何年。我欲乘风归去，<br/>
+			又恐琼楼玉宇，高处不胜寒。<br/>
+			起舞弄清影，何似在人间？<br/>
+			转朱阁，低绮户，<br/>
+			照无眠。不应有恨，<br/>
+			何事长向别时圆？人有悲欢离合，<br/>
+			月有阴晴圆缺，此事古难全。<br/>
+			但愿人长久，千里共婵娟。
+		</p>
+	</div>
+	<!-- 通用 展开/折叠 -->
+	<a href="#more" class="mohe-fold mohe-more js-mh-more" title="展开全部" opentitle="收起"></a>
+	<!-- 通用 查看更多 -->
+	<a href="#more" class="mohe-link mohe-more">查看更多</a>
+</div>
+<script type="text/javascript">
+	_loader.add('zepto','http://s0.qhimg.com/!26d721ef/zepto_1.1.2.js');
+	_loader.use('zepto',function(){
+
+		var context = $('.mohe-demo');
+		$(".js-mh-more",context).on('click',function(e){
+			e.preventDefault();
+			var cont = $('.mh-ui-cont', context);
+
+			cont.toggleClass('mh-ui-fold-more');
+			$(this).toggleClass('mohe-open');
+		});
+
+	})
+</script>

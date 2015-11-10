@@ -1,0 +1,44 @@
+<style>
+	#mohe-demo .mohe-navbar{
+		display:-webkit-box;
+		display:-ms-flexbox;
+		display:-webkit-flex;
+		display:flex;
+		background-color: #fafafa;
+		border-top: 1px solid #eaeaea;
+		height: 40px;
+		line-height: 40px;
+	}
+	#mohe-demo .mohe-navbar .mohe-item{
+		position: relative;
+		display: block;
+		text-align: center;
+		-webkit-box-flex: 1;
+		-webkit-flex: 1;
+		-ms-flex: 1;
+		flex: 1;
+		width: 1%;
+	}
+	#mohe-demo .mohe-navbar .mohe-item ~ .mohe-item{
+		margin-left: 1px;
+	}
+	#mohe-demo .mohe-navbar .mohe-item ~ .mohe-item::after{
+		content: "";
+		display: block;
+		position: absolute;
+		width: 1px;
+		overflow: hidden;
+		background: #cdcdcd;
+		top: 13px;
+		bottom: 13px;
+		left: -1px;
+	}
+</style>
+<div id="mohe-demo" class="g-mohe">
+	<nav class="mohe-navbar">
+		<a href="#" class="mohe-item">中国</a>
+		<a href="#" class="mohe-item">中国</a>
+		<a href="#" class="mohe-item">中国</a>
+		<a href="#" class="mohe-item">中国</a>
+	</nav>
+</div>

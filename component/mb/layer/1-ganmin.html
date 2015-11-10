@@ -1,0 +1,88 @@
+<style>
+.mohe-fullpage [data-sname='cont']{
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.mohe-fullpage [data-sname='topbar']{
+	display: -webkit-box;
+	display: flex;
+	line-height: 40px;
+	text-align: center;
+	border-bottom: 1px solid #eaeaea;
+}
+.mohe-fullpage [data-sname='back']{
+	display: block;
+	background-color: #fafafa;
+	width: 52px;
+	position: relative;
+	border-right: 1px solid #eaeaea;
+}
+.mohe-fullpage [data-sname='arrow']{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 16px;
+	height: 2px;
+	background-color: #555;
+	margin:-1px 0 0 -8px;
+}
+.mohe-fullpage [data-sname='arrow']::after,
+.mohe-fullpage [data-sname='arrow']::before{
+	content: "";
+	position: absolute;
+	left: 1px;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	background-color: inherit;
+	-webkit-transform-origin:left center;
+}
+.mohe-fullpage [data-sname='arrow']::before{
+	-webkit-transform:rotateZ(45deg);
+}
+.mohe-fullpage [data-sname='arrow']::after{
+	-webkit-transform:rotateZ(-45deg);
+}
+.mohe-fullpage [data-sname='title']{
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+}
+[data-sname='textarea']{
+	display: none;
+}
+</style>
+<div id="mohe-demo" class="g-mohe">
+	<div id="pager">
+		<a href="#ob360-fullpage-myfullpage" class="js-ob360-fullpage" data-target="myfullpage">点击查看弹层内容</a>
+		<textarea name='myfullpage' data-sname="textarea">
+			<div data-name='myfullpage' class='mohe-fullpage g-mohe'>
+				<div data-sname="topbar">
+					<a href="##back-to-page" data-sname="back">
+						<i data-sname="arrow"></i>
+					</a>
+					<div data-sname="title">标题</div>
+				</div>
+				<div data-sname="cont">
+					页面内容
+					<div class="js-test"></div>
+				</div>
+			</div>
+		</textarea>
+	</div>
+</div>
+<script>
+_loader.add('ob360.fullpage','http://s8.qhimg.com/!ec6a14d1/ob360.fullpage.js');
+_loader.use('zepto,ob360.fullpage',function(){
+	ob360.fullpage.init({
+		name:"myfullpage",
+		onfullpage:function(){
+			/*
+			@全屏后触发
+			@可以用来将一些图片资源全屏后再加载
+			*/
+			$('.js-test').text('全屏状态');
+		}
+	});
+});
+</script>

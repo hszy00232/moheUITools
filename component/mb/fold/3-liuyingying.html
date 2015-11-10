@@ -1,0 +1,94 @@
+<style>
+.mohe-demo a{
+	text-decoration: none
+}
+/*此处start*/
+.mohe-demo .mh-ui-filter{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	max-height: 34px;
+	overflow: hidden;
+	background: #fafafa;
+	border-top: 1px solid #eaeaea;
+	padding:0 10px;
+	text-align: left;
+	font-size: 0.875rem;
+}
+.mohe-demo .mh-ui-filter.open{
+	max-height:300px;
+}
+.mohe-demo .mh-ui-filter-inn{
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+	flex:1;
+}
+.mohe-demo .mh-ui-filter-inn a{
+	float: left;
+	color: #222;
+	width: 20%;
+	padding: 10px 0;
+	line-height: 1;
+	font-size: 14px
+}
+.mohe-demo .mh-ui-btn-toggle{
+	display: block;
+	width: 30px;
+	height: 34px;
+	text-align: center;
+}
+
+.mohe-demo .mh-ui-filter .mh-ui-btn-toggle:after{
+	content: '';
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	margin-left: 5px;
+	margin-top: 0.75rem;
+	border-bottom: 2px solid #999;
+	border-right: 2px solid #999;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transform-origin: 75% 25%;
+	transform-origin: 75% 25%;
+}
+.mohe-demo .mh-ui-filter.open .mh-ui-btn-toggle:after{
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+.mohe-demo .mh-ui-filter-inn a.active{
+	color: #2fa50e;
+}
+</style>
+<div class="mohe-demo">
+	<div class="mh-ui-filter">
+		<nav class="mh-ui-filter-inn g-clearfix">
+			<a class="active" href="#link" >全部</a>
+			<a href="#link">青春</a>
+			<a href="#link">时间</a>
+			<a href="#link">读书</a>
+			<a href="#link">学习</a>
+			<a href="#link">国家</a>
+			<a href="#link">信仰</a>
+			<a href="#link">励志</a>
+			<a href="#link">励志</a>
+			<a href="#link">励志</a>
+		</nav>
+		<a class="mh-ui-btn-toggle js-mh-ui-btn-toggle" href="#more"></a>
+	</div>
+</div>
+<script type="text/javascript">
+	_loader.use('zepto',function(){
+		var context = $('.mohe-demo');
+			navItem = $('.mh-ui-filter-inn a',context);
+		$(".js-mh-ui-btn-toggle",context).on("click",function(){
+			$(this).parent().toggleClass("open");
+		});
+
+		navItem.click(function(e){
+			$(this).addClass("active").siblings(".active").removeClass("active");
+		});
+	})
+</script>

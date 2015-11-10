@@ -1,0 +1,140 @@
+<!-- code-start -->
+<style type="text/css">
+.mohe-demo {
+	overflow: hidden;
+}
+.mohe-demo .mh-ui-img-slide {
+	position: relative;
+	float: left;
+	width: 321px;
+	height: 182px;
+}
+.mohe-demo .mh-ui-img-slide li {
+	position: relative;
+	display: none;
+	height: 182px;
+}
+.mohe-demo .mh-ui-img-slide li.mh-ui-img-cur {
+	display: block;
+}
+.mohe-demo .mh-ui-img-slide .mh-ui-img-tip {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	width: 321px;
+	height: 30px;
+	background-color: #000;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+}
+.mohe-demo .mh-ui-img-slide .mh-ui-img-tit {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	padding: 0 50px 0 10px;
+	width: 261px;
+	height: 30px;
+	font-size: 14px;
+	line-height: 30px;
+	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #fff;
+	z-index: 2;
+}
+.mohe-demo .mh-ui-img-slide .mh-ui-img-op {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 30px;
+	z-index: 2;
+}
+.mohe-demo .mh-ui-img-op a {
+	display: inline-block;
+	width: 9px;
+	height: 30px;
+	margin-right: 5px;
+	background: url(http://p4.qhimg.com/t0153b9c707d9ffd33d.png) left -67px no-repeat;
+}
+.mohe-demo .mh-ui-img-op a.mh-ui-img-cur {
+	background-position: -14px -67px;
+}
+</style>
+<div class="mohe-demo">
+	<!-- start: onebox内容 -->
+	<!-- 若想增加|减少图片：改变<li></li>和<a href="###slide"></a>即可-->
+	<div class="mh-ui-img-slide">
+		<ul>
+			<li class="mh-ui-img-cur">
+				<a href="###" target="_blank">
+					<img src="http://p3.qhimg.com/t016607dd1b8ec1af29.jpg" width="321" height="182">
+				</a>
+				<span class="mh-ui-img-tip"></span>
+				<span class="mh-ui-img-tit">图片1</span>
+			</li>
+			<li class="">
+				<a href="###" target="_blank">
+					<img src="http://p0.qhimg.com/t013ff84f07e8223f52.jpg" width="321" height="182">
+				</a>
+				<span class="mh-ui-img-tip"></span>
+				<span class="mh-ui-img-tit">图片2</span>
+			</li>
+			<li class="">
+				<a href="###" target="_blank">
+					<img src="http://p6.qhimg.com/t013c1e4b4fed288a35.jpg" width="321" height="182">
+				</a>
+				<span class="mh-ui-img-tip"></span>
+				<span class="mh-ui-img-tit">图片3</span>
+			</li>
+		</ul>
+		<div class="mh-ui-img-op">
+			<a href="###slide" target="_self" class="mh-ui-img-cur"></a>
+			<a href="###slide" target="_self" class=""></a>
+			<a href="###slide" target="_self" class=""></a>
+		</div>
+	</div>
+	<!-- end: onebox内容 -->
+</div>
+
+<script type="text/javascript">
+_loader.use("jquery",function(){
+	var $content = $('.mohe-demo'),
+		$imgSlide = $content.find('.mh-ui-img-op a'),
+		_imgTotal = $imgSlide.length,
+		pageScrollTimer,
+		_playing = true,
+		cur_page = 0;
+	/*功能：单击图片轮转*/
+	$imgSlide.click(function(e){
+		e.preventDefault();
+		sliderPage($(this).index());
+	});
+	/*功能：翻页*/
+	function sliderPage( nextPage ){
+			nextPage = (nextPage==_imgTotal?0:nextPage);
+			$content.find('.mh-ui-img-op a').removeClass('mh-ui-img-cur').eq(nextPage).addClass('mh-ui-img-cur');
+			$content.find('.mh-ui-img-slide li').removeClass('mh-ui-img-cur').eq(nextPage).addClass('mh-ui-img-cur');
+			cur_page = nextPage;
+		}
+	/*功能：自动翻页*/
+		function initPagescroll(){
+			pageScrollTimer = setInterval(function(){
+				if (_playing) {
+					sliderPage(cur_page+1);
+				}
+			}, 2000);
+		}
+		initPagescroll();
+		/*mouseenter后不自动翻页；mouseleave自动翻页*/
+		$content.find('.mh-ui-img-slide').hover(function(){
+			_playing = false;
+		}, function(){
+			_playing = true;
+		});
+});
+</script>
+<!-- code-end -->
+

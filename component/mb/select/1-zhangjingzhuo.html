@@ -1,0 +1,91 @@
+<style>
+	#mohe-demo .mh-ui-filters{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		background: #fafafa;
+		border: 1px solid #ddd;
+		border-width: 1px 0;
+		overflow: hidden;
+	}
+	#mohe-demo .mh-ui-filter{
+		-webkit-box-flex: 1;
+		-webkit-flex: 1;
+		flex: 1;
+		position: relative;
+		height: 34px;
+		overflow: hidden;
+		line-height: 34px;
+		padding: 0 10px;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	#mohe-demo .mh-ui-filter~.mh-ui-filter{
+		border-left: 1px solid #ddd;
+	}
+	#mohe-demo .mh-ui-filter:after{
+		content: "";
+		display: block;
+		border: 5px solid transparent;
+		border-top-color: #bbb;
+		position: absolute;
+		right: 10px;
+		top: 15px;
+	}
+	#mohe-demo .mh-ui-filter .mh-ui-sel{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		font-size: 26px;/*select高度兼容*/
+		overflow: hidden;
+		opacity: 0;
+		z-index: 1;
+	}
+</style>
+<div id="mohe-demo" class="g-mohe ">
+	<div class="mh-ui-filters">
+		<div class="mh-ui-filter">
+			<span>热门</span>
+			<select class="mh-ui-sel js-mh-ui-sel">
+				<option selected>热门</option>
+				<option>评分</option>
+			</select>
+		</div>
+		<div class="mh-ui-filter">
+			<span>美国</span>
+			<select class="mh-ui-sel js-mh-ui-sel">
+				<option>中国</option>
+				<option>韩国</option>
+				<option>日本</option>
+				<option selected>美国</option>
+				<option>泰国</option>
+				<option>其他</option>
+			</select>
+		</div>
+		<div class="mh-ui-filter">
+			<span>喜剧</span>
+			<select class="mh-ui-sel js-mh-ui-sel" data-type="types">
+				<option>爱情</option>
+				<option>动作</option>
+				<option>恐怖</option>
+				<option selected>喜剧</option>
+				<option>奇幻</option>
+				<option>其他</option>
+			</select>
+		</div>
+	</div>
+</div>
+<script>
+	_loader.use('zepto',function(){
+		var root = $("#mohe-demo"),
+			filter = $(".js-mh-ui-sel",root);
+		filter.on("change",function(){
+			var me =$(this),
+				text = me.find("option").eq(this.selectedIndex).text();
+				/*如果只获取val值的话也可以通过me.val()来获取*/
+			me.prev().text(text);
+		});
+	});
+</script>

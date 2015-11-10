@@ -1,0 +1,75 @@
+<!-- code-start --><div class="res-list g-mohe g-card g-block">
+<style>
+	.mohe-demo .mh-ui-tabs{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		border-top: 1px solid #eaeaea;
+		border-bottom: 1px solid #eaeaea;
+		background-color: #f7f7f7;
+		line-height: 40px;
+		margin:0 -2px;
+	}
+	.mohe-demo .mh-ui-tabs .mh-ui-items{
+		-webkit-box-flex:1;
+		-webkit-flex:1;
+		-flex:1;
+		color: #333;
+		display: block;
+		text-align: center;
+	}
+	.mohe-demo .mh-ui-tabs .mh-ui-items.active{
+		background-color: #fff;
+		margin: -1px 0;
+		border-top: 2px solid #00be3c;
+		color: #00be3c;
+	}
+	.mohe-demo .mh-ui-tabs .mh-ui-items~.mh-ui-items{
+		border-left: 1px solid #eaeaea;
+	}
+	.mohe-demo .mh-ui-tabs .mh-ui-items .mh-ui-links{
+		display: block;
+		color: #333;
+	}
+
+	/*js-ui-tabcon样式去掉，此处为模拟内容框*/
+	.mohe-demo .js-ui-tabcon{
+		min-height: 50px;
+		line-height: 50px;
+		text-align: center;
+	}
+</style>
+<div class="mohe-demo">
+	<ul class="mh-ui-tabs js-ui-tabs">
+		<li class="mh-ui-items active">
+			宜吃
+		</li>
+			<li class="mh-ui-items ">
+				忌吃
+			</li>
+		<li class="mh-ui-items ">
+			食疗菜谱
+		</li>
+	</ul>
+	<div class="js-ui-tabcon">第一个tab内容</div>
+	<div class="js-ui-tabcon" style="display:none">第二个tab内容</div>
+	<div class="js-ui-tabcon" style="display:none">第三个tab内容</div>
+</div>
+<script type="text/javascript">
+	_loader.use('zepto',function(){
+		var $scope = $('.mohe-demo'),
+		tabsTitle = $('.js-ui-tabs li', $scope),
+		tabsCon = $('.js-ui-tabcon', $scope);
+
+		/*tab切换*/
+		tabsTitle.click(function(){
+			var me = $(this);
+			tabsTitle.removeClass('active');
+			me.addClass('active');
+			tabsCon.hide();
+			tabsCon.eq(me.index()).show();
+		})
+	})
+</script>
+</div>
+<!-- code-end -->

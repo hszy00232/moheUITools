@@ -1,0 +1,85 @@
+<style>
+
+.mohe-demo .mh-ui-table{
+	width: 100%;
+	table-layout: fixed;
+}
+.mohe-demo .mh-ui-col1{
+	width: 40%;
+}
+.mohe-demo .mh-ui-col2{
+	width: 25%;
+}
+.mohe-demo .mh-ui-col3{
+	width: 15%;
+}
+.mohe-demo .mh-ui-table th{
+	background: #f8f8f8;
+}
+.mohe-demo .mh-ui-table th,
+.mohe-demo .mh-ui-table td{
+	padding-left: 10px;
+	height: 35px;
+	vertical-align: middle;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+.mohe-demo .mh-ui-table td{
+	border-top: 1px solid #eee;
+}
+
+.mohe-demo .mh-ui-aidlink{
+	margin-top: 6px;
+}
+.mohe-demo .mh-ui-aidlink a{
+	color: #77c;
+	text-decoration: none;
+}
+.mohe-demo .mh-ui-aidlink a:hover{
+	text-decoration: underline;
+}
+</style>
+<div class="mohe-demo">
+	<div class="cont mohe-wrap">
+		<table class="mh-ui-table">
+			<colgroup>
+				<col class="mh-ui-col1" />
+				<col class="mh-ui-col2" />
+				<col class="mh-ui-col3" />
+				<col class="mh-ui-col4" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>第一列</th>
+					<th>第二列</th>
+					<th>第三列</th>
+					<th>第四列</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- 保留td结构再判断其内容是否为空,示例如下-->
+				<!-- <td>
+					{%if !empty($cont)%}
+						{%$cont%}
+					{%/if%}
+				</td> -->
+				<tr>
+					<td>激爽豪华礼包</td>
+					<td>不凡发号中心</td>
+					<td>100</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>激爽豪华礼包</td>
+					<td>不凡发号中心不凡发号中心不凡发号中心不凡发号中心</td>
+					<td>100</td>
+					<td>50</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<p class="mh-ui-aidlink">
+		<a href="##" target="_blank">查看更多&gt;&gt;</a>
+	</p>
+</div>

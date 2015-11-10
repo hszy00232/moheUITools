@@ -1,0 +1,81 @@
+<style>
+	.mohe-demo .mh-ui-box{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+	}
+	.mohe-demo .mh-ui-ico-ans{
+		display: block;
+		height: 12px;
+		padding: 2px 2px 1px 2px;
+		margin: 3px 8px 0 0;
+		background: #3bac4c;
+		color: white;
+		font-size: 12px;
+		line-height: 1;
+	}
+	.mohe-demo .mh-ui-intro{
+		border-top: 1px solid #eaeaea;
+		margin-top: 8px;
+		padding: 8px 0;
+	}
+	.mohe-demo .mh-ui-h60{
+		height: 60px;
+		overflow: hidden;
+	}
+	.mohe-demo .mh-ui-line{
+		-webkit-line-clamp: 3;
+	}
+	.mohe-demo .mohe-more{
+		display: none;
+	}
+</style>
+<div class="mohe-demo">
+	<article class="mohe-wrap">
+		<section class="mh-ui-box">
+			<i class="mh-ui-ico-ans">答</i>
+			<h4>糖尿病病人不建议喝蜂蜜</h4>
+		</section>
+		<section class="mh-ui-intro">
+			<div class="mh-ui-h60 js-mh-wrap">
+				<p class="mh-ui-line js-mh-line">
+					不建议喝蜂蜜水，糖尿病患者不适合喝甜水，最好以白开水为主，建议试试中药治疗糖尿病，效果比较好，你可以试试采用“降纤清毒”+“壮中医胰岛平衡”治疗，不存在供体不足或排斥的问题，更不需要抗排斥药物，从而克服了供体不足和免疫排斥两大难题，安全性也大大提高。
+				</p>
+			</div>
+		</section>
+	</article>
+	<a href="#more" class="mohe-fold mohe-more js-mh-more" title="展开全部" opentitle="收起"></a>
+</div>
+<script type="text/javascript">
+	_loader.use("zepto",function(){
+		var context = $(".mohe-demo"),
+			wrap = $(".js-mh-wrap",context),
+			lineClamp = $(".js-mh-line",context),
+			more = $(".js-mh-more",context),
+			height = wrap.height();
+		/*根据屏幕和文字数量来控制查看更多是否显示*/
+		var initialize = function(){
+			if(!more.hasClass("mohe-open")){
+				if(lineClamp.height() > height){
+					lineClamp.addClass("g-ellipsis");
+					more.css("display","block");
+				}else{
+					lineClamp.removeClass("g-ellipsis");
+					more.hide();
+				}
+			}
+		}
+		initialize();
+
+		$(window).on("orientationchange",function(){
+			initialize();
+		});
+
+		more.on("click",function(e){
+			e.preventDefault();
+			wrap.toggleClass("mh-ui-h60");
+			lineClamp.toggleClass("g-ellipsis");
+			$(this).toggleClass("mohe-open");
+		});
+	});
+</script>

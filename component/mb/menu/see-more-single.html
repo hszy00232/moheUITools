@@ -1,0 +1,28 @@
+<!-- code-start --><style>
+	
+
+	.mohe-demo .mh-more {
+		height: 44px;
+		line-height: 44px;
+		background-color: #fff;
+		color: #666;
+		border-bottom: 1px solid #eaeaea;
+	}
+</style>
+<div class="mohe-demo">
+	<a href="#more" data-md='{"p":"more"}' class="mohe-fold mohe-more js-mh-more mh-more" title="查看全部比赛" opentitle="收起"></a>
+</div>
+<script type="text/javascript">
+	_loader.use('zepto',function(){
+	    var $scope = $('.mohe-demo'),
+			more = $('.js-mh-more',$scope);
+
+		more.on("click",function(e){
+			e.preventDefault();
+			var self = $(this);
+			self.toggleClass("mohe-open");
+		});
+	})
+</script>
+<!-- code-end -->
+

@@ -1,0 +1,175 @@
+<style>
+
+	.mohe-demo .mh-list {
+		margin-left: -10px;
+		_margin-left: -20px; /* ie6的hack，具体用时再测试下*/
+	}
+	.mohe-demo .mh-list li {
+		float: left;
+		width: 126px;
+		height: 178px;
+		overflow: hidden;
+		margin-bottom: 10px;
+		margin-left: 10px;
+	}
+	.mohe-demo .mh-list .mh-img {
+		position: relative;
+		overflow: hidden;
+		display: block;
+		width: 124px;
+		height: 150px;
+		border: 1px solid #eee;
+	}
+	.mohe-demo .mh-list .mh-name {
+		margin-top: 5px;
+		line-height: 1.4em;
+		text-align: center;
+	}
+	.mohe-demo .mh-img .mh-mask,
+	.mohe-demo .mh-img .mh-info {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 20px;
+	}
+	.mohe-demo .mh-img .mh-mask {
+		background-color: #000;
+		opacity: .5;
+		filter: alpha(opacity=50);
+	}
+	.mohe-demo .mh-img .mh-info {
+		line-height: 20px;
+		font-size: 12px;
+		color: #fff;
+	}
+	.mohe-demo .mh-img .mh-left,
+	.mohe-demo .mh-img .mh-right {
+		position: absolute;
+		bottom: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.mohe-demo .mh-img .mh-left {
+		box-sizing: border-box;
+		left: 5px;
+		width: 140px;
+		padding-left: 21px;
+		background: url(http://p1.qhimg.com/t015af173a5ebf4cd3c.png) no-repeat 0 0;
+		_background: url(http://p1.qhimg.com/t0191af2c121b413bae.png) no-repeat 0 0;
+	}
+	.mohe-demo .mh-img .mh-right {
+		right: 5px;
+		width: 50px;
+		text-align: right;
+	}
+</style>
+<div class="mohe-demo">
+	<ul class="mh-list gclearfix">
+		<li>
+			<a class="mh-img" href="##" target="_blank">
+				<img src="http://p9.qhimg.com/t014c70d4043684a33a.jpg" width="126" height="150" />
+				<span class="mh-mask"></span>
+				<span class="mh-info">
+					<i class="mh-left">爱奇艺</i>
+					<i class="mh-right">90:30</i>
+				</span>
+			</a>
+			<p class="mh-name">
+				<a href="##" target="_blank">天天向上</a>
+			</p>
+		</li>
+		<li>
+			<a class="mh-img" href="##" target="_blank">
+				<img src="http://p7.qhimg.com/t010d3461810eb9e44f.jpg" width="126" height="150" />
+				<span class="mh-mask"></span>
+				<span class="mh-info">
+					<i class="mh-left">360影视</i>
+					<i class="mh-right">90:30</i>
+				</span>
+			</a>
+			<p class="mh-name">
+				<a href="##" target="_blank">快乐大本营</a>
+			</p>
+		</li>
+		<li>
+			<a class="mh-img" href="##" target="_blank">
+				<img src="http://p3.qhimg.com/d/dy_3ae6bd406ea2233f1aec0affe4b2e2af.jpg" width="126" height="150" />
+				<span class="mh-mask"></span>
+				<span class="mh-info">
+					<i class="mh-left">优酷</i>
+					<i class="mh-right">90:30</i>
+				</span>
+			</a>
+			<p class="mh-name">
+				<a href="##" target="_blank">康熙来了</a>
+			</p>
+		</li>
+		<li>
+			<a class="mh-img" href="##" target="_blank">
+				<img src="http://p2.qhimg.com/t01b8f1c8994bdae545.jpg" width="126" height="150" />
+				<span class="mh-mask"></span>
+				<span class="mh-info">
+					<i class="mh-left">优酷</i>
+					<i class="mh-right">90:30</i>
+				</span>
+			</a>
+			<p class="mh-name">
+				<a href="##" target="_blank">爸爸去哪儿</a>
+			</p>
+		</li>
+		<li>
+			<a class="mh-img" href="##" target="_blank">
+				<img src="http://p7.qhimg.com/d/dy_2c3dad1e073a460dc348b3ae239424d4.jpg" width="126" height="150" />
+				<span class="mh-mask"></span>
+				<span class="mh-info">
+					<i class="mh-left">浙江卫视</i>
+					<i class="mh-right">90:30</i>
+				</span>
+			</a>
+			<p class="mh-name">
+				<a href="##" target="_blank">爸爸回来了</a>
+			</p>
+		</li>
+		<li>
+			<a class="mh-img" href="##" target="_blank">
+				<img src="http://p3.qhimg.com/t018c8222bd3e5c12e4.jpg" width="126" height="150" />
+				<span class="mh-mask"></span>
+				<span class="mh-info">
+					<i class="mh-left">优酷</i>
+					<i class="mh-right">90:30</i>
+				</span>
+			</a>
+			<p class="mh-name">
+				<a href="##" target="_blank">奔跑吧兄弟</a>
+			</p>
+		</li>
+		<li>
+			<a class="mh-img" href="##" target="_blank">
+				<img src="http://p1.qhimg.com/t0122a03e3db3bac406.jpg" width="126" height="150" />
+				<span class="mh-mask"></span>
+				<span class="mh-info">
+					<i class="mh-left">优酷</i>
+					<i class="mh-right">90:30</i>
+				</span>
+			</a>
+			<p class="mh-name">
+				<a href="##" target="_blank">女神的新衣</a>
+			</p>
+		</li>
+				<li>
+			<a class="mh-img" href="##" target="_blank">
+				<img src="http://p0.qhimg.com/dmt/100_120_/t01534a0bae06f2e46b.jpg?size=200x300" width="126" height="150" />
+				<span class="mh-mask"></span>
+				<span class="mh-info">
+					<i class="mh-left">优酷</i>
+					<i class="mh-right">90:30</i>
+				</span>
+			</a>
+			<p class="mh-name">
+				<a href="##" target="_blank">我爱记歌词</a>
+			</p>
+		</li>
+	</ul>
+</div>

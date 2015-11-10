@@ -1,0 +1,253 @@
+<style type="text/css">
+	/*分享到*/
+	.mohe-demo .mh-share-container {
+		position: relative;
+		margin-bottom: 25px;
+		color: #999;
+	}
+	.mohe-demo .mh-share-panel a {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		padding-top: 0;
+		margin-right: 6px;
+		overflow: hidden;
+		background: url(http://p5.qhimg.com/t01d1a436e469960820.png) 0 0 no-repeat;
+		text-indent: -999em;
+		text-align: left;
+		vertical-align: text-bottom;
+		+vertical-align: middle;
+		*display: inline;
+		*zoom: 1;
+	}
+	.mohe-demo .mh-share-panel .mh-weixin {
+		width: 24px;
+		height: 20px;
+		background-position: -29px 0;
+	}
+	.mohe-demo .mh-share-panel .mh-tweibo {
+		background-position: -59px 0;
+		width: 17px;
+	}
+	.mohe-demo .mh-share-panel .mh-qzone {
+		background-position: -83px 0;
+	}
+	.mohe-demo .mh-share-panel .mh-sina:hover {
+		background-position: 0px -30px;
+	}
+	.mohe-demo .mh-share-panel .mh-weixin:hover {
+		width: 24px;
+		height: 20px;
+		background-position: -29px -30px;
+	}
+	.mohe-demo .mh-share-panel .mh-tweibo:hover {
+		background-position: -59px -30px;
+	}
+	.mohe-demo .mh-share-panel .mh-qzone:hover {
+		background-position: -83px -30px;
+	}
+	/*微信二维码*/
+	.mohe-demo .mh-weixin-panel {
+		position: absolute;
+		bottom: -159px;
+		left: 76px;
+		width: 116px;
+		padding: 15px 0;
+		border: 1px solid #efe5ad;
+		background-color: #fff9d7;
+		display: none;
+		z-index: 50;
+		text-align: center;
+		color: #666;
+	}
+	.mohe-demo .mh-weixin-panel .mh-tips {
+		line-height: 18px;
+		margin-top: 7px;
+	}
+	.mohe-demo .mh-weixin-panel .mh-close {
+		position: absolute;
+		right: 2px;
+		top: 0;
+		display: block;
+		width: 17px;
+		height: 17px;
+		overflow: hidden;
+		text-indent: -99em;
+		background: url(http://p5.qhimg.com/t01d1a436e469960820.png) no-repeat 3px -53px;
+	}
+	.mohe-demo .mh-weixin-panel .mh-close:hover {
+		background-position: 3px -67px;
+	}
+	.mohe-demo .mh-weixin-panel .mh-tri-top {
+		left: 14px;
+		top: -6px;
+		display: block;
+		width: 12px;
+		height: 6px;
+		position: absolute;
+		background: url(http://p5.qhimg.com/t01d1a436e469960820.png) no-repeat -87px -56px;
+	}
+</style>
+
+<div class="mohe-demo">
+
+	<!-- start: onebox内容 -->
+	<div class="mh-share-container">
+		<div class="mh-share-panel" data-mgd='{"b":"share"}'>
+			去拉票：
+			<a class="mh-sina" title="新浪微博" href="#sina" data-share="weibo" data-md='{"p":"sina"}'>新浪微博</a>
+			<a class="mh-weixin" title="朋友圈" href="#weixin" data-share="weixin" data-md='{"p":"weixin"}'>微信朋友圈</a>
+			<a class="mh-tweibo" title="腾讯微博" href="#tweibo" data-share="tweibo" data-md='{"p":"tweibo"}'>腾讯微博</a>
+			<a class="mh-qzone" title="QQ空间" href="#qzone" data-share="qzone" data-md='{"p":"qzone"}'>QQ空间</a>
+		</div>
+		<div class="mh-weixin-panel">
+			<div class="mh-qrCode"></div>
+			<p class="mh-tips">微信&nbsp;“扫一扫”<br/>分享到朋友圈</p>
+			<a class="mh-close" href="#close" target="_self"></a>
+			<i class="mh-tri-top"></i>
+		</div>
+	</div>
+	<!-- end: onebox内容 -->
+	<p>
+		支持4个分享：新浪微博、朋友圈（二维码扫描）、腾讯微博、QQ空间<br/>
+		说明：<br/>
+		（1）精简了 HTML 代码：将分享的 url 和 text 移至脚本处<br/>
+		（2）脚本里只暴露了2个接口，方便使用：初始化函数、回调函数（修改分享的text）<br/>
+		其他：<br/>
+		（1）线上有3处正在使用该分享组件：<br/>
+		两个onebox（type=pk|pop_rank_side、type=relation_hits_side）和一个<a href='http://top.so.com/index.php?m=Popular' target="_blank">人气榜落地页</a>
+	</p>
+</div>
+
+<script type="text/javascript">
+_loader.use("jquery",function(){
+	/*
+	 * 功能：具体业务的逻辑
+	 * @param shareSrc (string) 分享来源的标识，参数由分享组件提供，值3种 weibo|tweibo|qzone
+	 * return share (JSON对象) 内含4项(标题、文本、链接、图片)，格式是 {title:'', text:'', url:'', pic:''}
+	 */
+	function shareParam(shareSrc){
+		var data = {
+				'type': 'pk',   //onebox对应的type，用于拼接分享回流url的参数src，供大搜统计
+				'query': '刘诗诗',  //query，用于拼接url
+				'key': '刘诗诗',    //以下字段都是分享text中会用到的
+				'title': '女演员',
+				'order': 1,
+				'total': 7242620
+			};
+
+		//对share.url的说明：q必须是编码后的，src=分享来源-oneboxType，shareback=分享来源
+		var share = {
+			url: 'http://www.so.com/s?q=' + encodeURIComponent(data.query) + '&src=' + shareSrc + '-' + data.type + '&shareback=' + shareSrc,
+			text: '#360人气榜# 正在火热评选中！' + data.key + '目前已经有' + data.total + '票了，在人气' + data.title +'排行榜中排名第' + data.order + '。各位小伙伴快来投票吧！'
+		};
+
+		return share;
+	}
+	var config = {
+		root: '.mohe-demo',
+		paramCallBack: shareParam  //回调函数
+	};
+	OtherShare(config);
+	/*
+	 * 功能：第三方分享接口
+	 * 说明：
+	 */
+	function OtherShare(config){
+
+		//默认配置
+		var conf = {
+			root: 'body',     //包含分享组件的父容器
+
+			// 选择器（默认）
+			selector: {
+				container: '.mh-share-container', // 分享的容器
+				share: '.mh-share-panel',     // 分享链接的容器
+				links: 'a',   // 分享的链接
+				wxPanel: '.mh-weixin-panel',  // 微信的容器
+				wxQrCode: '.mh-qrCode',       // 微信二维码图片的容器
+				wxClose: '.mh-close'         // 微信浮层的关闭按钮
+			},
+
+			// 分享的内容项
+			share: {
+				title: '',   // 标题
+				text: 'text', // 内容
+				url: 'http://www.so.com/s?q=share&src=onebox',  // 跳转url
+				pic: ''     // 图片
+			},
+
+			// 分享前修改参数share的回调函数
+			paramCallBack: 'shareParam'
+		};
+
+		$.extend(true, conf, config);
+
+		//选择器
+		var root = $(conf.root) || $(document);
+		var container = root.find(conf.selector.container),
+			share = container.find(conf.selector.share),
+			links = share.find(conf.selector.links),
+			wxPanel = container.find(conf.selector.wxPanel),
+			wxQrCode = wxPanel.find(conf.selector.wxQrCode),
+			wxClose = wxPanel.find(conf.selector.wxClose);
+
+		var shareObj={
+			reg:/\!\!([a-z]+)\!\!/g,
+			data:{
+				'weibo':'http://service.weibo.com/share/share.php?url=!!url!!&appkey=&title=!!title!!!!text!!&pic=!!pic!!&language=zh_cn&searchPic=false',
+				'tweibo':'http://share.v.t.qq.com/index.php?c=share&a=index&title=!!title!!!!text!!&url=!!url!!&pic=!!pic!!&searchPic=false',
+				'douban':'http://shuo.douban.com/%21service/share?image=!!pic!!&href=!!url!!&name=!!title!!&text=!!text!!&searchPic=false',
+				'qzone':'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=!!url!!&title=!!title!!&pics=!!pic!!&summary=!!text!!&searchPic=false',
+				'renren':'http://widget.renren.com/dialog/share?resourceUrl=!!url!!&srcUrl=!!url!!&title=!!title!!&pic=!!pic!!&description=!!text!!&searchPic=false',
+				'qq':'http://connect.qq.com/widget/shareqq/index.html?url=!!url!!&showcount=0&desc=!!text!!&summary=!!text!!&title=!!title!!&pics=!!pic!!&shareback=qq&searchPic=false'
+			}
+		};
+
+		//点击分享按钮
+		links.click(function(e){
+			e.preventDefault();
+			var me = $(this),
+				type = me.data('share'),
+				url = shareObj.data[type];
+
+			//回调修改分享的参数
+			if(typeof conf.paramCallBack === 'function'){
+				var share = conf.paramCallBack(type);
+				$.extend(true, conf.share, share);
+			}
+
+			if(type == "weixin"){
+				var qrcode = "http://open.onebox.so.com/dataApi/qrCode?src=onebox&size=3&level=l&margin=0&url=" +  encodeURIComponent(conf.share.url);
+				wxQrCode.html("<img src='" + qrcode + "' width='75' height='75' />");
+				wxPanel.show();
+			}else{
+
+				if(type=="qzone"){
+					conf.share.url = conf.share.url || "http://www.so.com/s?q=share";
+				}
+
+				var newurl = url.replace(shareObj.reg,function(str,s){
+					switch(s){
+						case 'url':
+							return encodeURIComponent(conf.share.url || '');
+						case 'title':
+							return encodeURIComponent(conf.share.title || '');
+						case 'pic':
+							return encodeURIComponent(conf.share.pic || '');
+						case 'text':
+							return encodeURIComponent(conf.share.text || 'text');
+					}
+				});
+				window.open(newurl);
+			}
+		});
+
+		//关闭微信二维码
+		wxClose.click(function(e){
+			e.preventDefault();
+			wxPanel.hide();
+		});
+	}
+});
+</script>

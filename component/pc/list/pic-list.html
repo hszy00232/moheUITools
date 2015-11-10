@@ -1,0 +1,249 @@
+<!DOCTYPE html><!--[if lt IE 7 ]><html class="ie6"><![endif]--><!--[if IE 7 ]><html class="ie7"><![endif]--><!--[if IE 8 ]><html class="ie8"><![endif]--><!--[if IE 9 ]><html class="ie9"><![endif]--><!--[if (gt IE 9)|!(IE)]><!--><html class=""><!--<![endif]--><head><meta charset="utf-8"><title>mohe平台组件开发页面</title><link rel="stylesheet" href="http://s1.qhimg.com/static/9f2be644da28ace0.css" /><script src="http://s9.qhimg.com/!4cd44b84/_360so_ob_loader.js"></script></head><body link="#0000cc"><div id="warper"><div id="container" class=""><div id="main"><ul class="result"><li class="res-list">
+<!-- code-start -->
+<style>
+.mohe-demo .mh-list-pic li{
+	float: left;
+	width: 114px;
+	padding: 0px 10px 15px;
+	overflow: hidden;
+	_display:inline;
+}
+.mohe-demo .mh-list-pic .mh-img{
+	padding: 5px;
+	border: 1px solid #eaeaea;
+}
+.mohe-demo .mh-list-pic .mh-cover{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 140px;
+	overflow: hidden;
+	color: #666;
+	text-decoration: none;
+	zoom:1;
+}
+.mohe-demo .mh-list-pic .mh-mask-tit,
+.mohe-demo .mh-list-pic .mh-tit{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+}
+.mohe-demo .mh-list-pic .mh-mask-tit{
+	background-color: #000;
+	opacity: .4;
+	filter:alpha(opacity=40);
+}
+.mohe-demo .mh-list-pic .mh-tit{
+	color: #fff;
+	text-align: center;
+}
+.mohe-demo .mh-list-pic .mh-mask{
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: .3;
+	filter:alpha(opacity=30);
+}
+.mohe-demo .mh-list-pic .mh-desc{
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #fff;
+	opacity: .9;
+	filter: alpha(opacity=90);
+	color: #666;
+}
+.mohe-demo .mh-list-pic .mh-desc dt{
+	float: left;
+	clear: left;
+}
+.mohe-demo .mh-list-pic .mh-desc dd{
+	overflow: hidden;
+}
+.mohe-demo .mh-list-pic .mh-cover:hover .mh-mask,
+.mohe-demo .mh-list-pic .mh-cover:hover .mh-desc{
+	display: block;
+	cursor: pointer;
+}
+.mohe-demo .mh-list-pic .mh-cover:hover .mh-mask-tit,
+.mohe-demo .mh-list-pic .mh-cover:hover .mh-tit{
+	display: none;
+}
+.mohe-demo .mh-list-pic .mh-name{
+	text-align: center;
+	margin: 5px 8px 0;
+}
+.mohe-demo .mh-list-pic .mh-name a{
+	text-decoration: none;
+}
+.mohe-demo .mh-list-pic .mh-name a:hover{
+	text-decoration: underline;
+}
+</style>
+<div class="mohe-demo">
+<ul class="mh-list-pic g-clearfix">
+	<li>
+		<div class="mh-img">
+			<a class="mh-cover" href="##" target="_blank">
+				<img src="http://p18.qhimg.com/t01691c32b233b07f5b.jpg" width="104"/>
+				<span class="mh-mask-tit"></span>
+				<span class="mh-tit">更新至10集</span>
+				<span class="mh-mask"></span>
+				<dl class="mh-desc">
+					<dt>导演：</dt>
+					<dd class="g-ellipsis">林玉芬,高林豹,梁胜权</dd>
+					<dt>演员：</dt>
+					<dd>霍建华 赵丽颖 蒋欣 张...</dd>
+				</dl>
+			</a>
+		</div>
+		<p class="mh-name g-ellipsis">
+			<a href="##" target="_blank" title="花千骨">花千骨</a>
+		</p>
+	</li>
+	<li>
+		<div class="mh-img">
+			<a class="mh-cover" href="##" target="_blank">
+				<img src="http://p18.qhimg.com/t01691c32b233b07f5b.jpg" width="104"/>
+				<span class="mh-mask-tit"></span>
+				<span class="mh-tit">更新至10集</span>
+				<span class="mh-mask"></span>
+				<dl class="mh-desc">
+					<dt>导演：</dt>
+					<dd class="g-ellipsis">林玉芬,高林豹,梁胜权</dd>
+					<dt>演员：</dt>
+					<dd>霍建华 赵丽颖 蒋欣 张...</dd>
+				</dl>
+			</a>
+		</div>
+		<p class="mh-name g-ellipsis">
+			<a href="##" target="_blank" title="花千骨（霍建华 赵丽颖版）">花千骨（霍建华 赵丽颖版）</a>
+		</p>
+	</li>
+	<li>
+		<div class="mh-img">
+			<a class="mh-cover" href="##" target="_blank">
+				<img src="http://p18.qhimg.com/t01691c32b233b07f5b.jpg" width="104"/>
+				<span class="mh-mask-tit"></span>
+				<span class="mh-tit">更新至10集</span>
+				<span class="mh-mask"></span>
+				<dl class="mh-desc">
+					<dt>导演：</dt>
+					<dd class="g-ellipsis">林玉芬,高林豹,梁胜权</dd>
+					<dt>演员：</dt>
+					<dd>霍建华 赵丽颖 蒋欣 张...</dd>
+				</dl>
+			</a>
+		</div>
+		<p class="mh-name g-ellipsis">
+			<a href="##" target="_blank" title="花千骨">花千骨</a>
+		</p>
+	</li>
+	<li>
+		<div class="mh-img">
+			<a class="mh-cover" href="##" target="_blank">
+				<img src="http://p18.qhimg.com/t01691c32b233b07f5b.jpg" width="104"/>
+				<span class="mh-mask-tit"></span>
+				<span class="mh-tit">更新至10集</span>
+				<span class="mh-mask"></span>
+				<dl class="mh-desc">
+					<dt>导演：</dt>
+					<dd class="g-ellipsis">林玉芬,高林豹,梁胜权</dd>
+					<dt>演员：</dt>
+					<dd>霍建华 赵丽颖 蒋欣 张...</dd>
+				</dl>
+			</a>
+		</div>
+		<p class="mh-name g-ellipsis">
+			<a href="##" target="_blank" title="花千骨">花千骨</a>
+		</p>
+	</li>
+	<li>
+		<div class="mh-img">
+			<a class="mh-cover" href="##" target="_blank">
+				<img src="http://p18.qhimg.com/t01691c32b233b07f5b.jpg" width="104"/>
+				<span class="mh-mask-tit"></span>
+				<span class="mh-tit">更新至10集</span>
+				<span class="mh-mask"></span>
+				<dl class="mh-desc">
+					<dt>导演：</dt>
+					<dd class="g-ellipsis">林玉芬,高林豹,梁胜权</dd>
+					<dt>演员：</dt>
+					<dd>霍建华 赵丽颖 蒋欣 张...</dd>
+				</dl>
+			</a>
+		</div>
+		<p class="mh-name g-ellipsis">
+			<a href="##" target="_blank" title="花千骨">花千骨</a>
+		</p>
+	</li>
+	<li>
+		<div class="mh-img">
+			<a class="mh-cover" href="##" target="_blank">
+				<img src="http://p18.qhimg.com/t01691c32b233b07f5b.jpg" width="104"/>
+				<span class="mh-mask-tit"></span>
+				<span class="mh-tit">更新至10集</span>
+				<span class="mh-mask"></span>
+				<dl class="mh-desc">
+					<dt>导演：</dt>
+					<dd class="g-ellipsis">林玉芬,高林豹,梁胜权</dd>
+					<dt>演员：</dt>
+					<dd>霍建华 赵丽颖 蒋欣 张...</dd>
+				</dl>
+			</a>
+		</div>
+		<p class="mh-name g-ellipsis">
+			<a href="##" target="_blank" title="花千骨">花千骨</a>
+		</p>
+	</li>
+	<li>
+		<div class="mh-img">
+			<a class="mh-cover" href="##" target="_blank">
+				<img src="http://p18.qhimg.com/t01691c32b233b07f5b.jpg" width="104"/>
+				<span class="mh-mask-tit"></span>
+				<span class="mh-tit">更新至10集</span>
+				<span class="mh-mask"></span>
+				<dl class="mh-desc">
+					<dt>导演：</dt>
+					<dd class="g-ellipsis">林玉芬,高林豹,梁胜权</dd>
+					<dt>演员：</dt>
+					<dd>霍建华 赵丽颖 蒋欣 张...</dd>
+				</dl>
+			</a>
+		</div>
+		<p class="mh-name g-ellipsis">
+			<a href="##" target="_blank" title="花千骨">花千骨</a>
+		</p>
+	</li>
+	<li>
+		<div class="mh-img">
+			<a class="mh-cover" href="##" target="_blank">
+				<img src="http://p18.qhimg.com/t01691c32b233b07f5b.jpg" width="104"/>
+				<span class="mh-mask-tit"></span>
+				<span class="mh-tit">更新至10集</span>
+				<span class="mh-mask"></span>
+				<dl class="mh-desc">
+					<dt>导演：</dt>
+					<dd class="g-ellipsis">林玉芬,高林豹,梁胜权</dd>
+					<dt>演员：</dt>
+					<dd>霍建华 赵丽颖 蒋欣 张...</dd>
+				</dl>
+			</a>
+		</div>
+		<p class="mh-name g-ellipsis">
+			<a href="##" target="_blank" title="花千骨">花千骨</a>
+		</p>
+	</li>
+</ul>
+</div>
+<!-- code-end -->
+</li></ul></div><div id="side"></div><div id="page"></div></div></div></body>

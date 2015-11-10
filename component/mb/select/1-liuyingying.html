@@ -1,0 +1,97 @@
+<style>
+	#mohe-demo .mh-ui-item-sel{
+		border: 1px solid #ddd;
+		height: 35px;
+		line-height: 35px;
+		position: relative;
+		width: 50%;
+	}
+	#mohe-demo .mh-ui-flex{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+	}
+	#mohe-demo .mh-ui-item-sel select{
+		width: 100%;
+		height: 34px;
+		border:0 none;
+		background:transparent;
+		-webkit-appearance:none;
+		padding-right: 16px;
+		font-family: microsoft yahei;
+		text-indent:81px;
+		position: relative;
+		z-index: 1;
+		font-size: 14px;
+	}
+	#mohe-demo .mh-ui-ico-green,
+	#mohe-demo .mh-ui-ico-orag
+	{
+		position: absolute;
+		background:#5cb642;
+		height: 14px;
+		line-height: 14px;
+		top: 10px;
+		left: 10px;
+		padding: 1px 5px;
+		color: #fff;
+		font-size:12px;
+	}
+	#mohe-demo .mh-ui-ico-orag{
+		background:#f09600;
+	}
+	#mohe-demo .mh-ui-arr{
+		display:block;
+		overflow:hidden;
+		width:0px;
+		height:0px;
+		padding:0;
+		font-size:0;
+		border:5px dashed transparent;
+		border-top-style:solid;
+		border-top-color:#aaa;
+		position: absolute;
+		top: 15px;
+		right: 7px;
+		z-index: 1;
+	}
+	#mohe-demo .mh-ui-mr10{
+		margin-right: 10px;
+	}
+</style>
+<div id="mohe-demo" class="g-mohe ">
+	<ul class="mh-ui-flex mh-ui-mb10">
+		<li class="mh-ui-item-sel mh-ui-mr10">
+			<span class="mh-ui-ico-orag">考生所在地</span>
+			<i class="mh-ui-arr"></i>
+			<select class="js-prov" data-sel="北京" id="js-prov">
+				<option value="2">天津</option>
+				<option value="3">上海</option>
+				<option value="4">重庆</option>
+				<option value="5">河北</option>
+				<option value="6">河南</option>
+				<option value="7">山东</option>
+				<option value="8">山西</option>
+				<option value="9">安徽</option>
+				<option value="10">江西</option>
+				<option value="11">江苏</option>
+			</select>
+		</li>
+		<li class="mh-ui-item-sel">
+			<span class="mh-ui-ico-green">高校所在地</span>
+			<i class="mh-ui-arr"></i>
+			<select data-sel="北京" id="js-prov2">
+				<option value="2">天津</option>
+				<option value="3">上海</option>
+				<option value="4">重庆</option>
+				<option value="5">河北</option>
+				<option value="6">河南</option>
+				<option value="7">山东</option>
+				<option value="8">山西</option>
+				<option value="9">安徽</option>
+				<option value="10">江西</option>
+				<option value="11">江苏</option>
+			</select>
+		</li>
+	</ul>
+</div>

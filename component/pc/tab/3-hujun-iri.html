@@ -1,0 +1,75 @@
+<style>
+	.mohe-demo .mh-tab-heads {
+		background-color: #f8f8f8;
+		width: 100%;
+		overflow:hidden;
+		zoom:1;
+		background-image: url('data:image/jpg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHCAgICAgICAgICD/2wBDAQcHBw0MDRgQEBgaFREVGiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICD/wAARCAAgAAUDAREAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAII/8QAGRABAAIDAAAAAAAAAAAAAAAAAAEDE1KR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ANRAAAnJXtHQf//Z');
+		height:32px;
+		line-height: 32px;
+	}
+	.mohe-demo .mh-tab-heads .mh-tab-head {
+		border-right: 1px solid #e5e5e5;
+		border-bottom: 1px solid #e5e5e5;
+		text-align: center;
+		cursor: pointer;
+		padding: 0px 20px;
+		list-style: none;
+		float: left;
+	}
+
+	.mohe-demo .mh-tab-heads .mh-tab-head.mh-tab-head-first {
+		border-left: none;
+	}
+
+	.mohe-demo .mh-tab-heads .mh-tab-active {
+		border-bottom: 1px solid #fff;
+		background-color: #fff;
+		font-weight: bold;
+		color: #3ead0e;
+	}
+
+	.mohe-demo .mh-tab-items {
+		min-height: 100px;
+		clear: both;
+	}
+
+	.mohe-demo .mh-tab-items .mh-tab-item {
+		display: none;
+	}
+
+	.mohe-demo .mh-tab-items .mh-tab-active {
+		display: block;
+	}
+
+</style>
+<div class="mohe-demo">
+	<div class="mohe-wrap">
+		<ul class="mh-tab-heads">
+			<li class="mh-tab-head mh-tab-head-first mh-tab-active">我是Tab1</li>
+			<li class="mh-tab-head">我是Tab2</li>
+			<li class="mh-tab-head">我是Tab3</li>
+			<li class="mh-tab-head">我是Tab4</li>
+		</ul>
+		<div class="mh-tab-items">
+			<div class="mh-tab-item mh-tab-active"><br>&nbsp;&nbsp;我是Tab1的内容</div>
+			<div class="mh-tab-item"><br>&nbsp;&nbsp;我是Tab2的内容</div>
+			<div class="mh-tab-item"><br>&nbsp;&nbsp;我是Tab3的内容</div>
+			<div class="mh-tab-item"><br>&nbsp;&nbsp;我是Tab4的内容</div>
+		</div>
+	</div>
+</div>
+
+<script>
+_loader.use("jquery",function(){
+	var context = $(".mohe-demo"),
+		tabs = $('.mh-tab-heads', context),
+		items = $('.mh-tab-item', context);
+
+	tabs.on("click",".mh-tab-head",function(){
+		var _index = $(this).index();
+		$(this).addClass("mh-tab-active").siblings().removeClass("mh-tab-active");
+		items.eq(_index).addClass("mh-tab-active").siblings().removeClass("mh-tab-active");
+	});
+});
+</script>

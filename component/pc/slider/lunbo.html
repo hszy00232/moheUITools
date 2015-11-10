@@ -1,0 +1,285 @@
+<!-- code-start -->
+<style type="text/css">
+
+	/*图片*/
+	.mohe-demo .mh-slider {
+		position: relative;
+		width: 100%;
+		height: 350px;
+		overflow: hidden;
+	}
+	.mohe-demo .mh-slider .mh-banner {
+		position: relative;
+		overflow: hidden;
+		height: 100%;
+	}
+	.mohe-demo .mh-slider .mh-banner li {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: none;
+		background-color: #ccc;
+	}
+	.mohe-demo .mh-slider .mh-banner li.mh-first {
+		display: block;
+	}
+
+	/*分页按钮*/
+	.mohe-demo  .mh-slider .mh-dots {
+		position: absolute;
+		right: 0;
+		bottom: 10px;
+		width: 150px;
+		height: 20px;
+	}
+	.mohe-demo  .mh-slider .mh-dots li {
+		float: left;
+		height: 100%;
+		width: 20px;
+		background: url(http://p0.qhimg.com/t010b16938cf2328dda.png) no-repeat center center;
+		margin-right: 10px;
+		cursor: pointer;
+		zoom: 1;
+	}
+	.mohe-demo .mh-slider .mh-dots li.on {
+		background: url(http://p0.qhimg.com/t01071da594d0b68d7e.png) no-repeat center center;
+	}
+
+	/*上下翻页按钮*/
+	.mohe-demo .mh-slider .mh-arraws .mh-prev,
+	.mohe-demo .mh-slider .mh-arraws .mh-next {
+		position: absolute;
+		top: 130px;
+		width: 40px;
+		height: 80px;
+	}
+	.mohe-demo .mh-slider .mh-arraws .mh-prev {
+		left: 0;
+		background: url(http://p6.qhimg.com/t01e88b60b84029bc96.png) no-repeat;
+		_background: none;
+		_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src="http://p6.qhimg.com/t01e88b60b84029bc96.png");
+	}
+	.mohe-demo .mh-slider .mh-arraws .mh-next {
+		right: 0;
+		background: url(http://p0.qhimg.com/t01cb2048b287b1668f.png) no-repeat;
+		_background: none;
+		_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=image,src="http://p0.qhimg.com/t01cb2048b287b1668f.png");
+	}
+</style>
+
+<div class="mohe-demo">
+	<!-- start: onebox内容 -->
+
+	<!-- 说明：增加|删除图片，直接操作li即可 -->
+	<div class="mh-slider">
+		<ul class="mh-banner gclearfix">
+			<li class="mh-first">
+				<img src="http://p5.qhimg.com/t01a3b8e4305c44ff99.jpg" width="100%" height="350">
+			</li>
+			<li>
+				<img src="http://p4.qhimg.com/t012fc85d15e1993c07.jpg" width="100%" height="350">
+			</li>
+			<li>
+				<img src="http://p1.qhimg.com/t017fb77a100739e535.jpg" width="100%" height="350">
+			</li>
+			<li>
+				<img src="http://p6.qhimg.com/t01aefb9ed06eb7f5a0.jpg" width="100%" height="350">
+			</li>
+		</ul>
+		<ol class="mh-dots gclearfix">
+			<li class="on"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+		<div class="mh-arraws">
+			<a class="mh-prev" href="#prev"></a>
+			<a class="mh-next" href="#next"></a>
+		</div>
+	</div>
+	<!-- end: onebox内容 -->
+</div>
+
+<script type="text/javascript">
+_loader.use("jquery",function(){
+
+		(function($){
+
+			function Slider(conf){
+
+				//默认配置
+				config = {
+					root: 'body',
+
+					speed: 500,    // 切屏的速度
+					delay: 1800,   // 切屏的延迟
+
+					autoplay: true,  // 自动轮播（布尔值）
+					pause: true,     // 鼠标移上去暂停（boolean）
+
+					selectors: {
+						container: '.mh-slider', // 轮播图的外层容器 css selector (string)
+						items: '.mh-banner',     // 轮播图片容器 css selector (string)
+						item: 'li',              // 轮播图片 css selector (string)
+						dots: '.mh-dots li',     // 分页圆点 css selector (string)
+						arraws: '.mh-arraws a'  // 上下一页箭头 css selector (string)
+					}
+				};
+
+				$.extend(true, config, conf);
+
+				var selector = config.selectors;
+				var root = $(config.root);
+
+				// jQuery对象
+				el = $(selector.container, root);
+				ul = $(selector.items, el);
+				li = $(selector.item, ul);
+				dots = $(selector.dots, el);
+				arraws = $(selector.arraws, el);
+
+				// 普通变量
+				total = li.length || 0;
+				cur = 0;
+				timer = null;
+			};
+
+			Slider.prototype = {
+				constructor: Slider,
+				init: function(){
+					var _ = this;
+
+					if(config.autoplay){
+						_.play();
+					}else{
+						config.pause = false;
+					}
+
+					//分页
+					if(dots.length){
+						dots.hover(function(){
+							var me = $(this),
+								idx = me.index();
+
+							if(config.pause){
+								_.stop();
+							}
+							if(idx == cur){
+								return;
+							}
+							_.to(idx);
+
+						}, function(){
+							if(config.pause){
+								_.play();
+							}
+						});
+					}
+
+					//翻页
+					if(arraws.length){
+						arraws.eq(0).click(function(e){
+							e.preventDefault();
+							_.prev();
+						});
+
+						arraws.eq(1).click(function(e){
+							e.preventDefault();
+							_.next();
+						});
+					}
+
+					//hover上暂停
+					if(config.pause){
+
+						ul.hover(function(){
+							_.stop();
+						}, function(){
+							_.play();
+						});
+
+						if(arraws.length){
+							arraws.hover(function(){
+								_.stop();
+							}, function(){
+								_.play();
+							});
+						}
+					}
+
+					return _;
+				},
+
+				play : function(){
+					var _ = this;
+					timer = setInterval(function(){
+						_.to( cur+1 );
+					}, config.delay|0);
+
+					return this;
+				},
+				stop : function(){
+					timer = clearInterval(timer);
+					return this;
+				},
+
+				prev : function(){
+					this.to(cur-1, -1);
+					return this;
+				},
+				next : function(){
+					this.to(cur+1, 1);
+					return this;
+				},
+
+				// move to this index
+				to : function(next, dir){
+					next = (next==-1) ? (total-1) : next;
+					next = (next==total) ? 0 : next;
+
+					var start = li.eq(cur),
+						end = li.eq(next);
+
+					if(!dir){
+						var dir = (next > cur) ? 1 : -1;
+					}
+
+					var offset = start.width()*dir;
+					end.css('left', offset +'px').show();
+
+					//stop([clearQueue], [jumpToEnd])   默认 stop(false, false)
+					start.stop(false,true).stop(true,true).animate({
+						'left': -1*offset + 'px'
+					}, config.speed);
+
+					end.stop(true,true).animate({
+						'left': 0
+					}, config.speed);
+
+					dots.eq(cur).toggleClass('on');
+					dots.eq(next).toggleClass('on');
+
+					cur = next;
+
+					return this;
+				}
+			};
+
+			if( !$.MoheUI ){
+				$.MoheUI = {};
+			}
+
+			$.MoheUI.Slider = function(conf){
+				return (new Slider(conf)).init();
+			};
+
+		})(jQuery);
+
+		var config = {
+			root: '.mohe-demo',
+		};
+		var slider = $.MoheUI.Slider(config);
+
+});
+</script>
+<!-- code-end -->

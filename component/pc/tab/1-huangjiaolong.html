@@ -1,0 +1,72 @@
+<style>
+	.mohe-demo .mh-ui-list-head{
+		border-bottom: 1px solid #eee;
+		width: 100%;
+		background: #f8f8f8;
+	}
+	.mohe-demo .mh-ui-tab-list{
+		height: 33px;
+		line-height: 33px;
+	}
+	.mohe-demo .mh-ui-tab-list .mh-ui-tab{
+		float: left;
+		padding: 0 45px;
+		border-right: 1px solid #eee;
+
+		color: #666;
+		cursor: pointer;
+		*zoom: 1;
+	}
+	.mohe-demo .mh-ui-tab-list .mh-ui-tab-active{
+		border-top: 2px solid #3ead0e;
+		border-left: none;
+
+		/*覆盖最外层的上边框*/
+		margin-top: -1px;
+		font-weight: bold;
+		color: #3ead0e;
+
+		background-color: #fff;
+		cursor: pointer;
+	}
+	.mohe-demo .mh-ui-list-body{
+		width: 100%;
+	}
+	.mohe-demo .mh-ui-list-item{
+		width: 100%;
+		height: 100px;
+		line-height: 100px;
+		text-align: center;
+	}
+	.mohe-demo .mh-ui-dis{
+		display: none;
+	}
+</style>
+<div class="mohe-demo">
+	<div class="mohe-wrap">
+		<div class="mh-ui-list-head">
+			<ul class="mh-ui-tab-list gclearfix">
+				<li class="mh-ui-tab mh-ui-tab-active">我是tab1</li>
+				<li class="mh-ui-tab">我是tab2</li>
+				<li class="mh-ui-tab">我是tab3</li>
+			</ul>
+		</div>
+		<div class="mh-ui-list-body">
+			<div class="mh-ui-list-item">我是内容1</div>
+			<div class="mh-ui-list-item mh-ui-dis">我是内容2</div>
+			<div class="mh-ui-list-item mh-ui-dis">我是内容3</div>
+		</div>
+	</div>
+</div>
+<script>
+	_loader.use("jquery",function(){
+		var context = $(".mohe-demo"),
+			lists = $(".mh-ui-list-item", context);
+		context.on("click", ".mh-ui-tab", function(e){
+			var _this = $(this),
+				_index = _this.index();
+			_this.addClass("mh-ui-tab-active").siblings("li").removeClass("mh-ui-tab-active");
+			lists.eq(_index).removeClass("mh-ui-dis").siblings(".mh-ui-list-item").addClass("mh-ui-dis");
+		});
+	});
+</script>

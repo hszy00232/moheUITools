@@ -1,0 +1,274 @@
+<style>
+	.mohe-demo .mh-ui-wrap{
+		width: 513px;
+		padding: 10px;
+		border: 1px solid #eee;
+	}
+	/* 顶部导航 */
+	.mohe-demo .mh-ui-navs-item{
+		float: left;
+		color: #999;
+		cursor:pointer;
+		margin-right: 10px;
+		_margin:0 5px 0 0;
+	}
+	.mohe-demo .mh-ui-navs-item .mh-ui-cats{
+		color: #333;
+	}
+	.mohe-demo .mh-ui-sel .mh-ui-cats{
+		font-weight: bold;
+		color:#3eaf0e;
+	}
+	.mohe-demo .mh-ui-box-wrap{
+		margin-top: 9px;
+		overflow: hidden;
+		position: relative;
+	}
+	.mohe-demo .mh-ui-box{
+		/* 首次有N张图片加载时，防止折行*/
+		width: 10000px;
+	}
+
+	/* 左右按钮 */
+	.mohe-demo .mh-ui-btn-l, .mohe-demo .mh-ui-btn-r {
+		width:31px;
+		height:46px;
+		top:40px;
+		position:absolute;
+		z-index:1;
+		display:none;
+	}
+	.mohe-demo .mh-ui-btn-l{
+		left: 0px;
+		background: url(http://p0.qhimg.com/t01f23ca11f375243ca.png) no-repeat 0 0;
+	}
+	.mohe-demo .mh-ui-btn-r{
+		right: 0px;
+		background: url(http://p0.qhimg.com/t01f23ca11f375243ca.png) no-repeat right 0;
+	}
+	/* 图片列表 */
+	.mohe-demo .mh-ui-ul-list{
+		float: left;
+	}
+	.mohe-demo .mh-ui-ul-list .mh-ui-list-item{
+		float: left;
+		width: 95px;
+		margin-right: 10px;
+	}
+	.mohe-demo .mh-ui-ul-list .mh-ui-img-wrap{
+		display: block;
+		width: 100%;
+		text-decoration: none;
+	}
+	.mohe-demo .mh-ui-ul-list .mh-ui-img-wrap:hover{
+		text-decoration: underline;
+	}
+	.mohe-demo .mh-ui-ul-list .mh-ui-img-wrap,.mohe-demo .mh-ui-ul-list .mh-ui-img{
+		/* ie下不出现蓝色边框*/
+		border: none;
+		outline: none;
+	}
+	.mohe-demo .mh-ui-img{
+		width: 95px;
+		height: 126px;
+	}
+</style>
+<div class="mohe-demo">
+	<div class="mh-ui-wrap">
+		<ul class="mh-ui-navs js-navs g-clearfix">
+			<li data-num="0" class="mh-ui-navs-item mh-ui-sel">
+				<span class="mh-ui-cats">电视剧</span>(1)
+			</li>
+			<li data-num="2" class="mh-ui-navs-item">
+				<span class="mh-ui-cats">综艺</span>(3)
+			</li>
+			<li data-num="3" class="mh-ui-navs-item">
+				<span class="mh-ui-cats">动漫</span>(3)
+			</li>
+		</ul>
+		<div class="mh-ui-box-wrap js-mouse">
+			<div class="mh-ui-box js-box gclearfix">
+				<a href="#left" class="mh-ui-btn-l mh-ui-btn"></a>
+				<ul class="mh-ui-ul-list js-ul-list" data-num="0">
+					<li class="mh-ui-list-item">
+						<a href="#" target="_blank" class="mh-ui-img-wrap">
+							<img src="http://photocdn.sohu.com/20140626/vrsab_ver6921808.jpg" alt="图片" class="mh-ui-img"/>
+						</a>
+					</li>
+				</ul>
+				<ul class="mh-ui-ul-list js-ul-list" data-num="2">
+					<li class="mh-ui-list-item">
+						<a href="#" target="_blank" class="mh-ui-img-wrap">
+							<img src="http://p2.qhimg.com/t01b8f1c8994bdae545.jpg" alt="图片" class="mh-ui-img"/>
+						</a>
+					</li>
+					<li class="mh-ui-list-item">
+						<a href="#" target="_blank" class="mh-ui-img-wrap">
+							<img src="http://p2.qhimg.com/t01b8f1c8994bdae545.jpg" alt="图片" class="mh-ui-img"/>
+						</a>
+					</li>
+					<li class="mh-ui-list-item">
+						<a href="#" target="_blank" class="mh-ui-img-wrap">
+							<img src="http://p2.qhimg.com/t01b8f1c8994bdae545.jpg" alt="图片" class="mh-ui-img"/>
+						</a>
+					</li>
+				</ul>
+				<ul class="mh-ui-ul-list js-ul-list" data-num="3">
+					<li class="mh-ui-list-item">
+						<a href="#" target="_blank" class="mh-ui-img-wrap">
+							<img src="http://p5.qhimg.com/d/dy_c922764bb32fe7d05f4dcfec690641c6.jpg" alt="图片" class="mh-ui-img"/>
+						</a>
+					</li>
+					<li class="mh-ui-list-item">
+						<a href="#" target="_blank" class="mh-ui-img-wrap">
+							<img src="http://p5.qhimg.com/d/dy_c922764bb32fe7d05f4dcfec690641c6.jpg" alt="图片" class="mh-ui-img"/>
+						</a>
+					</li>
+					<li class="mh-ui-list-item">
+						<a href="#" target="_blank" class="mh-ui-img-wrap">
+							<img src="http://p5.qhimg.com/d/dy_c922764bb32fe7d05f4dcfec690641c6.jpg" alt="图片" class="mh-ui-img"/>
+						</a>
+					</li>
+				</ul>
+				<a href="#right" class="mh-ui-btn-r mh-ui-btn"></a>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+
+	/* 点击左右按钮时，无论是向左还是向右，均默认一次滚一屏，即滚动5个*/
+	_loader.use("jquery",function(){
+		var context = $(".mohe-demo"),
+			navs = $(".js-navs li", context),
+			ulLists = $(".js-ul-list", context),
+			box = $(".js-box", context),
+			btn = $(".mh-ui-btn", context),
+			btnL = $(".mh-ui-btn-l", context),
+			btnR = $(".mh-ui-btn-r", context);
+
+		/*
+		 * marginL: box的margin-left
+		 * leftLiNum: 左侧被隐藏的li的总数
+		 * totalLiNum：所有ul中li的总数
+		 * minLiNum：当前view中显示的li数目+右侧被被隐藏的li数目
+		*/
+		var marginL = 0,
+			leftLiNum = 0,
+			totalLiNum = 0,
+			minLiNum = 0;
+
+		/* 可以循环取得，或者在统计nav后面的数字时也可以获得*/
+		totalLiNum = (function (){
+				var li = $(".js-ul-list li", context);
+				return li.length;
+			})();
+
+		var calMinLinNum = function(){
+			minLiNum = totalLiNum - leftLiNum;
+		};
+		calMinLinNum();
+		var clickNavs = function(){
+			navs.on("click",function(e){
+
+				/* 切换nav的选中样式*/
+				$(this).addClass("mh-ui-sel").siblings("li").removeClass("mh-ui-sel");
+
+				marginL = 0;
+				leftLiNum = 0;
+
+				/*计算选中nav左侧nav的所有li数目以及box需要左移的距离*/
+				var nowNavNum = $(this).attr("data-num");
+				$.each(ulLists, function(){
+					var thisNavNum = $(this).attr("data-num");
+
+					if(thisNavNum < nowNavNum){
+						marginL -= $(this).outerWidth();
+						leftLiNum += $("li", $(this)).length;
+					}
+				});
+
+				box.stop(true, true).animate({
+					'marginLeft' : marginL + 'px'
+				}, 200);
+				calMinLinNum();
+			});
+		};
+		clickNavs();
+
+		var clickBtnR = function(){
+			btnR.on("click",function(e){
+				e.preventDefault();
+
+				minLiNum = totalLiNum - leftLiNum;
+				if(minLiNum <= 5){
+					return false;
+				}
+
+				/* 525 = 5个li的宽度加5个margin-left*/
+				leftLiNum += 5;
+				marginL -= 525;
+				box.animate({
+					'marginLeft' : marginL + 'px'
+				}, 200);
+				navs.removeClass("mh-ui-sel");
+				calMinLinNum();
+				if(minLiNum < 5){
+					$(this).hide();
+				}
+			});
+		};
+		clickBtnR();
+
+		var clickBtnL = function (){
+			btnL.on('click', function (e){
+				e.preventDefault();
+				var scrollW = 0;
+				if(leftLiNum == 0){
+					return false;
+				}
+
+				/* 被隐藏的li超过5个，滚动一屏*/
+				/* 不够一屏的，有多少滚多少 */
+				if(leftLiNum >= 5){
+					scrollW = 525;
+					leftLiNum -= 5;
+				}else{
+					scrollW = leftLiNum * 105;
+					leftLiNum = 0;
+				}
+
+				marginL = marginL + scrollW;
+				box.stop(true, true).animate({
+					'marginLeft' : marginL + 'px'
+				}, 200);
+				navs.removeClass('mh-ui-sel');
+				calMinLinNum();
+				if(leftLiNum == 0){
+					$(this).hide();
+				}
+			});
+		};
+		clickBtnL();
+
+		/* 划过展现
+		 * 若左侧没有li了，则隐藏左侧按钮
+		 * 右侧按钮同理
+		*/
+		$('.js-mouse', context).on('mouseover', function(e){
+			if(totalLiNum <= 5){
+				return false;
+			}
+			if(leftLiNum){
+				btnL.show();
+			}
+			if(minLiNum > 5){
+				btnR.show();
+			}
+		});
+
+		$('.js-mouse', context).on('mouseout', function(e){
+			btn.hide();
+		});
+	});
+</script>

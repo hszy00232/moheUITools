@@ -1,0 +1,403 @@
+<style>
+/* 重置 */
+.mohe-demo .g-card-foot{
+	text-align: center;
+	display: none;
+}
+/* title标题 */
+.mohe-demo .title{
+	display: block;
+	margin-left: 10px;
+	margin-top: 5px;
+	padding-left: 14px;
+	font:300 16px/32px "Microsoft Yahei";
+	background: url(http://p2.qhimg.com/t01eb60ec4aa0ce9029.png) no-repeat 0 center;
+	background-image: -webkit-image-set(url(http://p2.qhimg.com/t01eb60ec4aa0ce9029.png) 1x,url(http://p9.qhimg.com/t014458923392dbbb4b.png) 2x);
+}
+/* filter部分 */
+.mohe-demo .mh-filters{
+	margin-bottom: 15px;
+}
+.mohe-demo .mh-filter-cate{
+	line-height: 19px;
+	margin-right: -16px;
+	padding-bottom: 6px;
+	*zoom:1;
+}
+.mohe-demo .mh-filter-cate:after{
+	display: block;
+	clear: both;
+	content: "";
+	visibility: hidden;
+	line-height: 0;
+}
+.mohe-demo .mh-filter-cate dt{
+	float: left;
+	color: #666;
+}
+.mohe-demo .mh-filter-cate dd{
+	overflow: hidden;
+	*zoom: 1;
+}
+.mohe-demo .mh-filter-cate .mh-cate{
+	float: left;
+	margin-right: 16px;
+	_margin-right: 15px;
+	margin-bottom: 4px;
+	padding:0px 3px;
+	text-decoration: none;
+	white-space: nowrap;
+	outline: none;
+}
+.mohe-demo .mh-filter-cate .mh-cate:hover{
+	text-decoration: underline;
+}
+.mohe-demo .mh-filter-cate .mh-cate.active{
+	background: #0063c8;
+	color:#fff;
+	border-radius: 2px;
+}
+.mohe-demo .mh-filter-cate .mh-cate.active:hover{
+	text-decoration: none;
+}
+/* 正在加载 */
+.mohe-demo .mh-load-state{
+	height: 174px;
+	padding: 100px 0;
+	line-height: 32px;
+	color: #333;
+	font-size: 14px;
+	text-align: center;
+	display: none;
+}
+.mohe-demo .mh-loading{
+	display: block;
+}
+.mohe-demo .mh-loaded{
+	display: none;
+}
+.mohe-demo .mh-load-default{
+	height: 54px;
+	padding:34px 0;
+}
+.mohe-demo .mh-load-default .mh-loading{
+	display: none;
+}
+.mohe-demo .mh-load-default .mh-loaded{
+	display: block;
+}
+.mohe-demo .mh-ico-loading{
+	display: inline-block;
+	*zoom:1;
+	*display:inline;
+	width: 32px;
+	height: 32px;
+	font-size: 0;
+	line-height:32px;
+	vertical-align: middle;
+	background: url(http://p7.qhimg.com/t01d48f0da2e6a37bfe.gif) no-repeat left top;
+	margin-right: 10px;
+}
+/* 图片列表 */
+.mohe-demo .mh-list-pic li{
+	float: left;
+	width: 114px;
+	padding: 0px 10px 15px;
+	overflow: hidden;
+	_display:inline;
+}
+.mohe-demo .mh-list-pic .mh-img{
+	padding: 5px;
+	border: 1px solid #eaeaea;
+}
+.mohe-demo .mh-list-pic .mh-cover{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 104px;
+	overflow: hidden;
+	color: #666;
+	text-decoration: none;
+	zoom:1;
+}
+.mohe-demo .mh-list-pic .mh-mask{
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	opacity: .3;
+	filter:alpha(opacity=30);
+}
+
+.mohe-demo .mh-list-pic .mh-cover:hover .mh-mask{
+	display: block;
+	cursor: pointer;
+}
+.mohe-demo .mh-list-pic .mh-name{
+	text-align: center;
+	margin: 5px 8px 0;
+}
+.mohe-demo .mh-list-pic .mh-name a{
+	text-decoration: none;
+}
+.mohe-demo .mh-list-pic .mh-name a:hover{
+	text-decoration: underline;
+}
+.mohe-demo .mh-view{
+	font-size: 14px;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+</style>
+
+<div class="mohe-demo">
+	<div class="g-card g-shadow">
+		<h3 class="title">娱乐明星</h3>
+		<div class="g-padding">
+			<div class="mh-filters">
+				<dl class="mh-filter-cate js-mh-filter-cate" data-cate="fields">
+					<dt>按领域：</dt>
+					<dd class="g-clearfix">
+						<a href="#" class="mh-cate  js-mh-filter-item" data-md="" data-param="全部">全部</a>
+						<a href="#" class="mh-cate  active js-mh-filter-item" data-md="" data-param="歌手">歌手</a>
+						<a href="#" class="mh-cate  js-mh-filter-item" data-md="" data-param="演员">演员</a>
+						<a href="#" class="mh-cate  js-mh-filter-item" data-md="" data-param="模特">模特</a>
+						<a href="#" class="mh-cate  js-mh-filter-item" data-md="" data-param="主持人">主持人</a>
+						<a href="#" class="mh-cate  js-mh-filter-item" data-md="" data-param="导演">导演</a>
+					</dd>
+				</dl>
+				<dl class="mh-filter-cate js-mh-filter-cate" data-cate="area">
+					<dt>按地区：</dt>
+					<dd class="g-clearfix">
+						<a href="#" class="mh-cate  active js-mh-filter-item" data-md="" data-param="全部">全部</a>
+						<a href="#" class="mh-cate  js-mh-filter-item" data-md="" data-param="内地">内地</a>
+						<a href="#" class="mh-cate  js-mh-filter-item" data-md="" data-param="香港">香港</a>
+						<a href="#" class="mh-cate  js-mh-filter-item" data-md="" data-param="台湾">台湾</a>
+						<a href="#" class="mh-cate  js-mh-filter-item" data-md="" data-param="日本">日本</a>
+						<a href="#" class="mh-cate  js-mh-filter-item" data-md="" data-param="韩国">韩国</a>
+					</dd>
+				</dl>
+				<dl class="mh-filter-cate js-mh-filter-cate" data-cate="sex">
+					<dt>按性别：</dt>
+					<dd class="g-clearfix">
+						<a href="#" class="mh-cate  active js-mh-filter-item" data-md="" data-param="全部">全部</a>
+						<a href="#" class="mh-cate  js-mh-filter-item" data-md="" data-param="男">男</a>
+						<a href="#" class="mh-cate  js-mh-filter-item" data-md="" data-param="女">女</a>
+					</dd>
+				</dl>
+			</div>
+			<div class="mh-load-state js-mh-load">
+				<div class="mh-loading">
+					<i class="mh-ico-loading"></i>正在为您努力加载中...
+				</div>
+				<div class="mh-loaded">
+					矮油，没有找到符合条件的电视剧，快试试其他分类吧~
+				</div>
+			</div>
+		</div>
+		<!--  图片列表 -->
+		<div class="mh-view js-mh-view">
+			<ul class="mh-list-pic g-clearfix" data-mgd="">
+				<li>
+					<div class="mh-img">
+						<a class="mh-cover" href="#" target="_blank" data-md="#">
+							<img src="http://p0.qhimg.com/sdmt/110_110_100/d/_famous_onebox/pic/star/3418933.jpg" width="104">
+							<span class="mh-mask"></span>
+						</a>
+					</div>
+					<p class="mh-name g-ellipsis">
+						<a href="#" target="_blank" title="曹格" data-md="">曹格</a>
+					</p>
+				</li>
+				<li>
+					<div class="mh-img">
+						<a class="mh-cover" href="#" target="_blank" data-md="#">
+							<img src="http://p0.qhimg.com/sdmt/110_110_100/d/_famous_onebox/pic/star/1000763.jpg" width="104">
+							<span class="mh-mask"></span>
+						</a>
+					</div>
+					<p class="mh-name g-ellipsis">
+						<a href="#" target="_blank" title="胡歌" data-md="">胡歌</a>
+					</p>
+				</li>
+				<li>
+					<div class="mh-img">
+						<a class="mh-cover" href="#" target="_blank" data-md="">
+							<img src="http://p0.qhimg.com/sdmt/110_110_100/d/_famous_onebox/pic/star/1033558.jpg" width="104">
+							<span class="mh-mask"></span>
+						</a>
+					</div>
+					<p class="mh-name g-ellipsis">
+						<a href="#" target="_blank" title="rain" data-md="#">rain</a>
+					</p>
+				</li>
+				<li>
+					<div class="mh-img">
+						<a class="mh-cover" href="#" target="_blank" data-md="">
+							<img src="http://p0.qhimg.com/sdmt/110_110_100/d/_famous_onebox/pic/star/911192.jpg" width="104">
+							<span class="mh-mask"></span>
+						</a>
+					</div>
+					<p class="mh-name g-ellipsis">
+						<a href="#" target="_blank" title="angelababy" data-md="#">angelababy</a>
+					</p>
+				</li>
+				<li>
+					<div class="mh-img">
+						<a class="mh-cover" href="#" target="_blank" data-md="">
+							<img src="http://p0.qhimg.com/sdmt/110_110_100/d/_famous_onebox/pic/star/2444552.jpg" width="104">
+							<span class="mh-mask"></span>
+						</a>
+					</div>
+					<p class="mh-name g-ellipsis">
+						<a href="#" target="_blank" title="鹿晗" data-md="">鹿晗</a>
+					</p>
+				</li>
+				<li>
+					<div class="mh-img">
+						<a class="mh-cover" href="#" target="_blank" data-md="">
+							<img src="http://p0.qhimg.com/sdmt/110_110_100/d/_famous_onebox/pic/star/960853.jpg" width="104">
+							<span class="mh-mask"></span>
+						</a>
+					</div>
+					<p class="mh-name g-ellipsis">
+						<a href="#" target="_blank" title="唐嫣" data-md="">唐嫣</a>
+					</p>
+				</li>
+				<li>
+					<div class="mh-img">
+						<a class="mh-cover" href="#" target="_blank" data-md="">
+							<img src="http://p3.qhimg.com/sdmt/110_110_100/t01d4bc29c2abab6723.jpg" width="104">
+							<span class="mh-mask"></span>
+						</a>
+					</div>
+					<p class="mh-name g-ellipsis">
+						<a href="#" target="_blank" title="杨洋" data-md="">杨洋</a>
+					</p>
+				</li>
+				<li>
+					<div class="mh-img">
+						<a class="mh-cover" href="#" target="_blank" data-md="">
+							<img src="http://p0.qhimg.com/sdmt/110_110_100/d/_famous_onebox/pic/star/4909310.jpg" width="104">
+							<span class="mh-mask"></span>
+						</a>
+					</div>
+					<p class="mh-name g-ellipsis">
+						<a href="#" target="_blank" title="李易峰" data-md="">李易峰</a>
+					</p>
+				</li>
+			</ul>
+			<div class="js-mh-page-num" data-page="10"></div>
+		</div>
+		<div class="g-card-foot js-mh-page">
+			<!-- 这里生成翻页 -->
+		</div>
+	</div>
+</div>
+
+<script>
+_loader.add("haosouPager","http://s4.qhimg.com/static/829be658513aea47/haosouPager.js");
+_loader.use("jquery,haosouPager",function(){
+	var context = $(".mohe-demo"),
+		filters = $(".js-mh-filters",context),
+		filterCate = $(".js-mh-filter-cate",context),
+		filterItem = $(".js-mh-filter-item",context),
+		loadState = $(".js-mh-load",context),
+		viewCont = $(".js-mh-view",context),
+		pageCont = $(".js-mh-page",context);
+
+	/* 获取页数 */
+	var pageTotal = $(".js-mh-page-num",context).data("page"),
+		dataUrl = filters.data("url"),
+		dataQuery = filters.data("query");
+
+	/* 初始化提交data */
+	var data = {
+		"query": dataQuery,
+		"url" : dataUrl,
+		"addInfo" : "",
+		"num":1,
+		"type":"star_card",
+		"src" :"onebox",
+		"tpl" :1
+	};
+	/* 大于100页，重置页数 */
+	function resetPageNum(pageTotal){
+		return pageTotal = pageTotal > 100 ? 100 : pageTotal;
+	};
+	/* 设置data.addInfo */
+	function setAddInfo(currPage){
+		var addInfoArr = [];
+		$.each(filterCate,function(item,index){
+			addInfoArr.push($(index).data('cate')+":"+$.trim($(index).find('.active').data("param")))
+			return addInfoArr;
+		});
+		addInfoArr.push("limit:8","page:"+currPage);
+		data.addInfo = addInfoArr.join("|");
+		return data;
+	};
+
+	/* 异步请求数据 */
+	function getAjax(data,isGetPage){
+		loadState.removeClass('mh-load-default').show();
+		viewCont.hide();
+		$.ajax({
+			url:'http://open.onebox.so.com/dataApi',
+			data:data,
+			dataType:'jsonp',
+			timeout: '3000'
+		})
+		.done(function(data){
+			if(data && data.html){
+				loadState.hide();
+				viewCont.html(data.html).show();
+				pageTotal = $(".js-mh-page-num",context).data("page");
+				if(pageTotal > 1){
+					/* 重新初始化翻页 */
+					isGetPage && pageCont.haosouPager({
+						totalPage: resetPageNum(pageTotal),/* 大于100页，重置页数 */
+						currPage: 1,
+						callback:function(currPage){
+							data = setAddInfo(currPage);
+							getAjax(data);
+						}
+					}).show();
+				}else{
+					pageCont.hide();
+				}
+			}else{
+				loadState.addClass('mh-load-default');
+				pageCont.hide();
+			}
+		})
+		.fail(function(){
+			loadState.addClass('mh-load-default');
+			pageCont.hide();
+		})
+	};
+	/* 点击分类发送异步请求 */
+	filterItem.on('click',function(e){
+		e.preventDefault();
+		var me = $(this);
+		me.addClass("active")
+		.siblings('.js-mh-filter-item')
+		.removeClass("active");
+		data = setAddInfo(1);
+		getAjax(data,true);
+	});
+
+	/* 生成翻页 */
+	pageTotal && pageTotal>1 && pageCont.haosouPager({
+		totalPage: resetPageNum(pageTotal),/* 大于100页，重置页数 */
+		currPage: 1,
+		callback: function(currPage){
+			data = setAddInfo(currPage);
+			getAjax(data);
+		}
+	}).show();
+});
+</script>

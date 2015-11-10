@@ -1,0 +1,75 @@
+<style>
+	#mohe-demo .mh-ui-tabs{
+		position: relative;
+		border: 1px solid #5cb642;
+		background-color: #5cb642;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		line-height: 40px;
+		border-radius: 5px;
+	}
+	#mohe-demo .mh-ui-tabs .mh-ui-links{
+		display: block;
+		-webkit-box-flex:1;
+		-webkit-flex:1;
+		-flex:1;
+		text-align: center;
+		color: white;
+		z-index: 1;
+		-webkit-transition: color .1s ease-in-out;
+		transition: color .1s ease-in-out;
+	}
+	#mohe-demo .mh-ui-tabs .mh-ui-links.mh-active{
+		color: #5cb642;
+	}
+	#mohe-demo .mh-ui-tabs .mh-ui-ico-cover{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 33.3%;
+		height: 100%;
+		background: #fff;
+		border-radius: 5px;
+		-webkit-transition:-webkit-transform .1s ease-in-out;
+		transition: transform .1s ease-in-out;
+	}
+	#mohe-demo .mh-ui-tabcon~.mh-ui-tabcon{
+		display: none;
+	}
+	/*mh-ui-tabcon样式去掉，此处为模拟内容框*/
+	#mohe-demo .mh-ui-tabcon{
+		min-height: 50px;
+		line-height: 50px;
+		text-align: center;
+	}
+</style>
+<div id="mohe-demo" class="g-mohe">
+	<div class="mh-ui-tabs js-mh-ui-tabs">
+		<a href="#tab1" class="mh-ui-links mh-active">热门</a>
+		<a href="#tab2" class="mh-ui-links">最新</a>
+		<a href="#tab3" class="mh-ui-links">评分</a>
+		<i class="mh-ui-ico-cover js-mh-ui-ico-cover"></i>
+	</div>
+	<div class="mh-ui-tabcon js-mh-ui-tabcon">第一个tab内容</div>
+	<div class="mh-ui-tabcon js-mh-ui-tabcon">第二个tab内容</div>
+	<div class="mh-ui-tabcon js-mh-ui-tabcon">第三个tab内容</div>
+</div>
+<script type="text/javascript">
+	_loader.use('zepto',function(){
+		var root = $("#mohe-demo"),
+			tabsTitle = $(".mh-ui-links", root),
+			tabsCon = $(".js-mh-ui-tabcon", root),
+			cover = $(".js-mh-ui-ico-cover", root);
+
+		tabsTitle.on("click", function(e){
+			e.preventDefault();
+			var me = $(this),
+				index = me.index(),
+				offLet = me.position().left;
+			me.addClass("mh-active").siblings().removeClass("mh-active");
+			tabsCon.eq(index).show().siblings(".js-mh-ui-tabcon").hide();
+			cover.css({"-webkit-transform":"translateX("+offLet+"px)","transform":"translateX("+offLet+"px)"});
+		});
+	});
+</script>

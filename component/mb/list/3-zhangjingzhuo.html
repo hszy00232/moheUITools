@@ -1,0 +1,51 @@
+<style>
+	#mohe-demo .mh-ui-item{
+		position: relative;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		float: left;
+		width: 50%;
+		height: 44px;
+		line-height: 44px;
+		border-bottom: 1px dotted #eaeaea;
+	}
+	#mohe-demo .mh-ui-item a{
+		display: block;
+		width: 100%;
+	}
+	#mohe-demo .mh-ui-item:nth-child(2n){
+		padding-left:10px;
+	}
+	#mohe-demo .mh-ui-item:nth-child(2n+1):after{
+		border-right: 1px solid #e9e9e9;
+		content: "";
+		position: absolute;
+		top: 15px;
+		right: 0;
+		height: 16px;
+	}
+	#mohe-demo .mh-ui-num{
+		padding: 0 5px;
+		font:italic 14px/44px Arial;
+		color: #999;
+	}
+</style>
+<div id="mohe-demo" class="g-mohe">
+	<ul class="mh-ui-list gclearfix">
+		<li class="mh-ui-item"><i class="mh-ui-num">1</i>喂借亻固霺笑</li>
+		<li class="mh-ui-item"><i class="mh-ui-num">2</i>颏骨铭⌒心</li>
+		<li class="mh-ui-item"><i class="mh-ui-num">1</i>喂借亻固霺笑</li>
+		<li class="mh-ui-item"><i class="mh-ui-num">2</i>颏骨铭⌒心</li>
+		<li class="mh-ui-item">喂借亻固霺笑</li>
+		<li class="mh-ui-item">颏骨铭⌒心</li>
+		<li class="mh-ui-item">喂借亻固霺笑</li>
+		<li class="mh-ui-item">颏骨铭⌒心</li>
+		<li class="mh-ui-item"><a href="#">喂借亻固霺笑</a></li>
+		<li class="mh-ui-item"><a href="#">颏骨铭⌒心</a></li>
+		<li class="mh-ui-item"><a href="#">喂借亻固霺笑</a></li>
+		<li class="mh-ui-item"><a href="#">颏骨铭⌒心</a></li>
+	</ul>
+</div>

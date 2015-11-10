@@ -1,0 +1,102 @@
+<style>
+	.mohe-demo .mh-list {
+		overflow: hidden;
+		height: 190px;
+	}
+	.mohe-demo .mh-list li {
+		float: left;
+		overflow: hidden;
+		width: 128px;
+		height: 90px;
+		margin: 0 0 6px 7px;
+		border: 1px solid #eee;
+	}
+	.mohe-demo .mh-list li.mh-first {
+		width: 258px;
+		height: 188px;
+		margin: 0;
+	}
+	.mohe-demo .mh-list .mh-img {
+		position: relative;
+		overflow: hidden;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	.mohe-demo .mh-img .mh-mask,
+	.mohe-demo .mh-img .mh-info {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 20px;
+	}
+	.mohe-demo .mh-img .mh-mask {
+		background-color: #000;
+		opacity: .5;
+		filter: alpha(opacity=50);
+	}
+	.mohe-demo .mh-img .mh-info {
+		overflow: hidden;
+		line-height: 20px;
+		font-size: 12px;
+		color: #fff;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		text-indent: 5px;
+	}
+	.mohe-demo .mh-img .mh-ico {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 3px;
+		font-size: 12px;
+		line-height: 1em;
+		color: #fff;
+		background-color: #f90;
+	}
+</style>
+<div class="mohe-demo">
+	<ol class="mh-list">
+		<li class="mh-first">
+			<a class="mh-img" href="##" target="_blank">
+				<img src="http://p5.qhimg.com/t01c7a2528994dd582d.jpg" width="260" height="190" />
+				<span class="mh-mask"></span>
+				<span class="mh-info">哈佛大学</span>
+				<span class="mh-ico">NO.1</span>
+			</a>
+		</li>
+		<li>
+			<a class="mh-img" href="##" target="_blank">
+				<img src="http://p4.qhimg.com/t013729da5ddd9cdc35.jpg" width="130" height="92" />
+				<span class="mh-mask"></span>
+				<span class="mh-info">斯坦福大学</span>
+				<span class="mh-ico">NO.2</span>
+			</a>
+		</li>
+		<li>
+			<a class="mh-img" href="##" target="_blank">
+				<img src="http://p5.qhimg.com/t015d1b2fad43273512.jpg" width="130" height="92" />
+				<span class="mh-mask"></span>
+				<span class="mh-info">哥伦比亚大学</span>
+				<span class="mh-ico">NO.3</span>
+			</a>
+		</li>
+		<li>
+			<a class="mh-img" href="##" target="_blank">
+				<img src="http://p6.qhimg.com/t019375974b0bdc7720.jpg" width="130" height="92" />
+				<span class="mh-mask"></span>
+				<span class="mh-info">耶鲁大学</span>
+				<span class="mh-ico">NO.4</span>
+			</a>
+		</li>
+		<li>
+			<a class="mh-img" href="##" target="_blank">
+				<img src="http://p0.qhimg.com/t01187b2dd91c8d86f3.jpg" width="130" height="92" />
+				<span class="mh-mask"></span>
+				<span class="mh-info">普林斯顿大学</span>
+				<span class="mh-ico">NO.5</span>
+			</a>
+		</li>
+	</ol>
+</div>

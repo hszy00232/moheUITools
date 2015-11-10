@@ -1,0 +1,309 @@
+<style type="text/css">
+.mohe-demo {
+	overflow: hidden;
+}
+.mohe-demo .mh-scroll{
+	overflow: auto;
+	zoom: 1;
+	margin-top: 10px;
+}
+
+.mohe-demo .mh-scroll .mh-controll,
+.mohe-demo .mh-scroll .mh-scroll-cotent{
+	height: 71px;
+	float: left;
+}
+
+.mohe-demo .mh-scroll .mh-controll{
+	background-image: url('http://p7.qhimg.com/d/inn/8c82f54f/one-box-slide.png');
+	background-repeat: no-repeat;
+	width: 	16px;
+}
+
+.mohe-demo .mh-scroll .mh-scroll-cotent{
+	width: 432px;
+	margin: 0px 5px;
+
+	overflow: hidden;
+}
+
+.mohe-demo .mh-scroll .mh-left-default{
+	background-position: 0px -81px;
+	cursor: pointer;
+}
+
+.mohe-demo .mh-scroll .mh-left-default:hover{
+	background-position: 0px -162px;
+}
+
+.mohe-demo .mh-scroll .mh-left-default:active{
+	background-position: 0px -243px;
+}
+
+.mohe-demo .mh-scroll .mh-right-default {
+	background-position: -46px -81px;
+	cursor: pointer;
+}
+
+.mohe-demo .mh-scroll .mh-right-default:hover{
+	background-position: -46px -162px;
+}
+
+.mohe-demo .mh-scroll .mh-right-default:active{
+	background-position: -46px -243px;
+}
+
+.mohe-demo .mh-scroll .mh-left-disable {
+	background-position: 0px 0px;
+	cursor: auto;
+}
+
+.mohe-demo .mh-scroll .mh-right-disable {
+	background-position: -46px 0px;
+	cursor: auto;
+}
+
+.mohe-demo .mh-scroll-item{
+	padding-right: 9px;
+	text-align: center;
+}
+
+.mohe-demo .mh-scroll-item a{
+	display: block;
+	text-decoration: none;
+}
+
+.mohe-demo .mh-scroll-item img{
+	width: 54px;
+	height: 54px;
+	vertical-align: middle;
+}
+
+.mohe-demo .mh-scroll-item span{
+	width: 54px;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	word-break: keep-all;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.mohe-demo .mh-scroll-item a:hover span{
+	text-decoration: underline;
+}
+
+.mohe-demo .mh-srcoll-table{
+	position: relative;
+	left: 0;
+
+	transition: left .5s;
+	-moz-transition: left .5s; /* Firefox 4 */
+	-webkit-transition: left .5s; /* Safari 和 Chrome */
+	-o-transition: left .5s; /* Opera */
+
+	transition-timing-function: ease-in-out;
+	-moz-transition-timing-function: ease-in-out; /* Firefox 4 */
+	-webkit-transition-timing-function: ease-in-out; /* Safari 和 Chrome */
+	-o-transition-timing-function: ease-in-out; /* Opera */
+
+}
+
+.mohe-demo .mh-contorll-hide{
+	display: none;
+}
+</style>
+<div class="mohe-demo">
+	<!-- start: onebox内容 -->
+	<div class="mh-scroll">
+		<!-- 左边控制按钮 -->
+		<div class="js-controll-left mh-controll mh-left-default"></div>
+		<div class="js-content mh-scroll-cotent">
+			<table class="js-scroll mh-srcoll-table">
+				<tr>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/5653734.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_金孝渊&quot;}">
+							<img src="http://p4.qhimg.com/dmfd/54_54_/t0133f8a13fcb559b66.jpg">
+							<br>
+							<span title="金孝渊">金孝渊</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/5422336.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_权侑莉&quot;}">
+							<img src="http://p1.qhimg.com/dmfd/54_54_/t0143074f9b377dc3b9.jpg">
+							<br>
+							<span title="权侑莉">权侑莉</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/5406445-5644294.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_崔秀英&quot;}">
+							<img src="http://p0.qhimg.com/dmfd/54_54_/t016086f1227dfa9db7.jpg">
+							<br>
+							<span title="崔秀英">崔秀英</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/442344-468396.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_黄美英&quot;}">
+							<img src="http://p6.qhimg.com/dmfd/54_54_/t01db8c9359a1839ebb.jpg">
+							<br>
+							<span title="黄美英">黄美英</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/5402067.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_李顺圭&quot;}">
+							<img src="http://p0.qhimg.com/dmfd/54_54_/t0163cc4512eabe3c1f.png">
+							<br>
+							<span title="李顺圭">李顺圭</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/5348389.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_林允儿&quot;}">
+							<img src="http://p6.qhimg.com/dmfd/54_54_/t01e90a641f9202e2af.jpg">
+							<br>
+							<span title="林允儿">林允儿</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/606240.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_金泰妍&quot;}">
+							<img src="http://p7.qhimg.com/dmfd/54_54_/t01fcd553cf8af726d6.jpg">
+							<br>
+							<span title="金泰妍">金泰妍</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/428684.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_郑秀妍&quot;}">
+							<img src="http://p3.qhimg.com/dmfd/54_54_/t01f7808e104f900e5c.jpg">
+							<br>
+							<span title="郑秀妍">郑秀妍</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/240463.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_徐珠贤&quot;}">
+							<img src="http://p4.qhimg.com/dmfd/54_54_/t0127a46b873441031c.jpg">
+							<br>
+							<span title="徐珠贤">徐珠贤</span>
+						</a>
+					</td>
+										<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/5406445-5644294.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_崔秀英&quot;}">
+							<img src="http://p0.qhimg.com/dmfd/54_54_/t016086f1227dfa9db7.jpg">
+							<br>
+							<span title="崔秀英">崔秀英</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/442344-468396.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_黄美英&quot;}">
+							<img src="http://p6.qhimg.com/dmfd/54_54_/t01db8c9359a1839ebb.jpg">
+							<br>
+							<span title="黄美英">黄美英</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/5402067.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_李顺圭&quot;}">
+							<img src="http://p0.qhimg.com/dmfd/54_54_/t0163cc4512eabe3c1f.png">
+							<br>
+							<span title="李顺圭">李顺圭</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/5348389.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_林允儿&quot;}">
+							<img src="http://p6.qhimg.com/dmfd/54_54_/t01e90a641f9202e2af.jpg">
+							<br>
+							<span title="林允儿">林允儿</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/606240.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_金泰妍&quot;}">
+							<img src="http://p7.qhimg.com/dmfd/54_54_/t01fcd553cf8af726d6.jpg">
+							<br>
+							<span title="金泰妍">金泰妍</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/428684.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_郑秀妍&quot;}">
+							<img src="http://p3.qhimg.com/dmfd/54_54_/t01f7808e104f900e5c.jpg">
+							<br>
+							<span title="郑秀妍">郑秀妍</span>
+						</a>
+					</td>
+					<td class="mh-scroll-item">
+						<a href="http://baike.so.com/doc/240463.html" target="_blank" data-md="{&quot;p&quot;:&quot;member_徐珠贤&quot;}">
+							<img src="http://p4.qhimg.com/dmfd/54_54_/t0127a46b873441031c.jpg">
+							<br>
+							<span title="徐珠贤">徐珠贤</span>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- 右边控制按钮 -->
+		<div class="js-controll-right mh-controll mh-right-default"></div>
+	</div>
+	<!-- end: onebox内容 -->
+</div>
+
+<script type="text/javascript">
+_loader.use("jquery",function(){
+	var context = $('.mohe-demo');
+
+	var content = $(".js-content", context),
+		scrollEle = $(".js-scroll", context),
+		leftControll = $(".js-controll-left", context),
+		rightControll = $(".js-controll-right", context);
+
+	var left = 0,
+		//每一次滚动的长度
+		step = 63*7;
+
+	function init() {
+		leftControll.removeClass("mh-left-default").addClass("mh-left-disable");
+
+		if(scrollEle.width() <= content.width()) {
+			rightControll.removeClass("mh-right-default").addClass("mh-right-disable");
+		}
+	}
+
+	init();
+
+	function setDefaultControll() {
+		leftControll.removeClass("mh-left-disable").addClass("mh-left-default");
+		rightControll.removeClass("mh-right-disable").addClass("mh-right-default");
+	}
+
+	context.on("click",".js-controll-left", function() {
+		if (leftControll.hasClass("mh-left-disable")) {
+			return;
+		}
+
+		left += step;
+		scrollEle.css("left", left+"px");
+
+		if (left >= 0) {
+			leftControll.removeClass("mh-left-default").addClass("mh-left-disable");
+			rightControll.removeClass("mh-right-disable").addClass("mh-right-default");
+		} else {
+			setDefaultControll();
+		}
+
+	});
+
+	context.on("click",".js-controll-right",function() {
+		if (rightControll.hasClass("mh-right-disable")) {
+			return;
+		}
+
+		left -= step;
+		scrollEle.css("left", left+"px");
+
+		if( (Math.abs(left) + step ) >= scrollEle.width() ) {
+			rightControll.removeClass("mh-right-default").addClass("mh-right-disable");
+			leftControll.removeClass("mh-left-disable").addClass("mh-left-default");
+		} else {
+			setDefaultControll();
+		}
+
+	});
+});
+
+</script>

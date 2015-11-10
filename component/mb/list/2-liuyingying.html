@@ -1,0 +1,145 @@
+<style>
+	#mohe-demo .mh-ui-flex{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-pack:start;
+		-webkit-box-align:center;
+		-webkit-justify-content: flex-start;
+		justify-content: flex-start;
+		-webkit-align-items:center;
+	}
+	#mohe-demo .mh-ui-item{
+		-webkit-box-flex:1;
+		-webkit-flex:1;
+		flex:1;
+	}
+	#mohe-demo .mh-ui-list,
+	#mohe-demo a .mh-ui-list{
+		height: 40px;
+		line-height: 40px;
+		border-top: 1px dashed #eaeaea;
+	}
+	#mohe-demo .mh-ui-list{
+		border-top: none;
+	}
+	#mohe-demo .mh-ui-list i{
+		display:inline-block;
+		font-size: 12px;
+		line-height: 1;
+		width: 16px;
+		height: 16px;
+		line-height: 16px;
+		text-align: center;
+		background-color: #ccc;
+		color: #fff;
+	}
+	#mohe-demo .mh-ui-list.mh-ui-top3 i{
+		background-color: #5cb642;
+	}
+	#mohe-demo .mh-ui-list li:first-child{
+		width: 23px;
+		height: 16px;
+		line-height: 1;
+	}
+	#mohe-demo .mh-ui-list li:nth-child(2){
+		width: 100px;
+	}
+	#mohe-demo .mh-ui-list li:nth-child(3){
+		text-align: center;
+	}
+	#mohe-demo .mh-ui-list li:last-child{
+		width: 85px;
+		text-align: center;
+	}
+	#mohe-demo .mh-ui-tit-bg{
+		background-color: #f7f7f7;
+		position:relative;
+		z-index: 1;
+		margin-bottom: -1px;
+		border-top: 1px solid #eaeaea;
+	}
+	#mohe-demo .mh-ui-bar{
+		height: 8px;
+		width: 60px;
+		background-color: #eee;
+		margin: 0 auto;
+	}
+	#mohe-demo .mh-ui-bar-in{
+		height: 8px;
+		background-color:#5cb642;
+		width: 10px;
+	}
+</style>
+<div id="mohe-demo" class="g-mohe">
+	<div class="mohe-wrap mh-ui-tit-bg">
+		<ul class="mh-ui-flex mh-ui-list">
+			<li></li>
+			<li>品牌名</li>
+			<li class="mh-ui-item">产品数量</li>
+			<li>本周热度</li>
+		</ul>
+	</div>
+	<div class="mohe-wrap">
+		<a href="#link">
+			<ul class="mh-ui-flex mh-ui-list mh-ui-top3">
+				<li><i>1</i></li>
+				<li class="g-aline">邦克仕</li>
+				<li class="mh-ui-item mh-ui-fc9">134款</li>
+				<li>
+					<div class="mh-ui-bar">
+						<div class="mh-ui-bar-in" style="width:50px"></div>
+					</div>
+				</li>
+			</ul>
+		</a>
+		<a href="#link">
+			<ul class="mh-ui-flex mh-ui-list mh-ui-top3">
+				<li><i>2</i></li>
+				<li class="g-aline">麦多多</li>
+				<li class="mh-ui-item mh-ui-fc9">8款</li>
+				<li>
+					<div class="mh-ui-bar">
+						<div class="mh-ui-bar-in" style="width:46px"></div>
+					</div>
+				</li>
+			</ul>
+		</a>
+		<a href="#link">
+			<ul class="mh-ui-flex mh-ui-list mh-ui-top3">
+				<li><i>3</i></li>
+				<li class="g-aline">摩米士</li>
+				<li class="mh-ui-item mh-ui-fc9">60款</li>
+				<li>
+					<div class="mh-ui-bar">
+						<div class="mh-ui-bar-in" style="width:38px"></div>
+					</div>
+				</li>
+			</ul>
+		</a>
+		<a href="#link">
+			<ul class="mh-ui-flex mh-ui-list">
+				<li><i>4</i></li>
+				<li class="g-aline">蓝盛</li>
+				<li class="mh-ui-item mh-ui-fc9">7款</li>
+				<li>
+					<div class="mh-ui-bar">
+						<div class="mh-ui-bar-in" style="width:20px"></div>
+					</div>
+				</li>
+			</ul>
+		</a>
+		<a href="#link">
+			<ul class="mh-ui-flex mh-ui-list">
+				<li><i>5</i></li>
+				<li class="g-aline">贝尔金</li>
+				<li class="mh-ui-item mh-ui-fc9">7款</li>
+				<li>
+					<div class="mh-ui-bar">
+						<div class="mh-ui-bar-in" style="width:10px"></div>
+					</div>
+				</li>
+			</ul>
+		</a>
+	</div>
+</div>

@@ -1,0 +1,216 @@
+<style>
+	.mohe-demo .mh-list-pic{
+		padding-left: 1px;
+	}
+
+	.mohe-demo .mh-list-pic li {
+		float: left;
+		width: 80px;
+		padding: 0px 13px 15px;
+		overflow: hidden;
+		_display: inline;
+	}
+	.mohe-demo .mh-list-pic .mh-img {
+		border: 1px solid #eaeaea;
+	}
+	.mohe-demo .mh-list-pic .mh-cover {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 78px;
+		overflow: hidden;
+		color: #666;
+		text-decoration: none;
+		zoom: 1;
+	}
+	.mohe-demo .mh-list-pic .mh-mask-tit,
+	.mohe-demo .mh-list-pic .mh-tit {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 20px;
+		line-height: 20px;
+	}
+	.mohe-demo .mh-list-pic .mh-mask-tit {
+		background-color: #000;
+		opacity: .4;
+		filter: alpha(opacity=40);
+	}
+	.mohe-demo .mh-list-pic .mh-tit {
+		color: #fff;
+		text-align: center;
+	}
+	.mohe-demo .mh-list-pic .mh-mask {
+		display: none;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		opacity: .3;
+		filter: alpha(opacity=30);
+	}
+	.mohe-demo .mh-list-pic .mh-desc {
+		display: none;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: #fff;
+		opacity: .9;
+		filter: alpha(opacity=90);
+		color: #666;
+	}
+	.mohe-demo .mh-list-pic .mh-desc dt {
+		float: left;
+		clear: left;
+	}
+	.mohe-demo .mh-list-pic .mh-desc dd {
+		overflow: hidden;
+	}
+	.mohe-demo .mh-list-pic .mh-cover:hover .mh-mask,
+	.mohe-demo .mh-list-pic .mh-cover:hover .mh-desc {
+		display: block;
+		cursor: pointer;
+	}
+	.mohe-demo .mh-list-pic .mh-cover:hover .mh-mask-tit,
+	.mohe-demo .mh-list-pic .mh-cover:hover .mh-tit {
+		display: none;
+	}
+	.mohe-demo .mh-list-pic .mh-name {
+		text-align: center;
+		margin: 5px 8px 0;
+	}
+	.mohe-demo .mh-list-pic .mh-name a {
+		text-decoration: none;
+	}
+	.mohe-demo .mh-list-pic .mh-name a:hover {
+		text-decoration: underline;
+	}
+</style>
+<div class="mohe-demo">
+	<ul class="mh-list-pic g-clearfix ">
+		<li>
+			<div class="mh-img">
+				<a href="#" class="mh-cover" target="_blank" data-md="" title="胡歌">
+					<img src="http://p2.qhimg.com/t01afe5f4efbe4eddd1.jpg" width="78">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="#" title="胡歌" target="_blank" data-md="">胡歌</a>
+				<br><span title="饰 梅长苏" class="g-c-dark">饰 梅长苏</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="#" class="mh-cover" target="_blank" data-md="" title="刘涛">
+					<img src="http://p4.qhimg.com/t01d9e602c79efc91fa.jpg" width="78">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="#" title="刘涛" target="_blank" data-md="">刘涛</a>
+				<br><span title="饰 霓凰郡主" class="g-c-dark">饰 霓凰郡主</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="#" class="mh-cover" target="_blank" data-md="" title="王凯">
+					<img src="http://p7.qhimg.com/t012d1449176411ee73.jpg" width="78">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="#" title="王凯" target="_blank" data-md="">王凯</a>
+				<br><span title="饰 靖王" class="g-c-dark">饰 靖王</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="#" class="mh-cover" target="_blank" data-md="" title="黄维德">
+					<img src="http://p8.qhimg.com/t0175319316a8844c40.jpg" width="78">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="#" title="黄维德" target="_blank" data-md="">黄维德</a>
+				<br><span title="饰 誉王" class="g-c-dark">饰 誉王</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="#" class="mh-cover" target="_blank" data-md="" title="陈龙">
+					<img src="http://p2.qhimg.com/t01cd460dec6c0e876c.jpg" width="78">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="#" title="陈龙" target="_blank" data-md="">陈龙</a>
+				<br><span title="饰 蒙挚" class="g-c-dark">饰 蒙挚</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="#" class="mh-cover" target="_blank" data-md="" title="高鑫">
+					<img src="http://p6.qhimg.com/t01ed5410da6f9f39aa.jpg" width="78">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="#" title="高鑫" target="_blank" data-md="">高鑫</a>
+				<br><span title="饰 太子" class="g-c-dark">饰 太子</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="#" class="mh-cover" target="_blank" data-md="" title="吴磊">
+					<img src="http://p2.qhimg.com/t0182c2ac522f4d982a.jpg" width="78">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="#" title="吴磊" target="_blank" data-md="">吴磊</a>
+				<br><span title="饰 飞流" class="g-c-dark">饰 飞流</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="#" class="mh-cover" target="_blank" data-md="" title="程皓枫">
+					<img src="http://p1.qhimg.com/t010a6c5f701d902618.jpg" width="78">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="#" title="程皓枫" target="_blank" data-md="">程皓枫</a>
+				<br><span title="饰 萧景睿" class="g-c-dark">饰 萧景睿</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="#" class="mh-cover" target="_blank" data-md="" title="郭晓然">
+					<img src="http://p5.qhimg.com/t0178fef8f76e949a58.jpg" width="78">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="#" title="郭晓然" target="_blank" data-md="">郭晓然</a>
+				<br><span title="饰 言豫津" class="g-c-dark">饰 言豫津</span>
+			</p>
+		</li>
+		<li>
+			<div class="mh-img">
+				<a href="#" class="mh-cover" target="_blank" data-md="" title="匡牧野">
+					<img src="http://p5.qhimg.com/t0109911534eac4aba7.jpg" width="78">
+					<span class="mh-mask"></span>
+				</a>
+			</div>
+			<p class="mh-name g-ellipsis">
+				<a href="#" title="匡牧野" target="_blank" data-md="">匡牧野</a>
+				<br><span title="饰 谢弼" class="g-c-dark">饰 谢弼</span>
+			</p>
+		</li>
+	</ul>
+</div>

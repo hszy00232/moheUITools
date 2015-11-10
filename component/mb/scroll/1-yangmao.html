@@ -1,0 +1,19 @@
+<div id="mohe-demo" class="g-mohe g-card g-cool" style="height: 150px; text-align: center; padding: 25px;">
+	跳过搜索头部
+</div>
+<script type="text/javascript">
+_loader.use('zepto', function(){
+	try{
+
+		/* onebox定位到顶部,跳过搜索框 */
+		var main = $('#main');
+		var mainTop = main.offset().top;
+		setTimeout(function(){
+			if (window.scrollY < mainTop) {
+				main[0].scrollIntoView();
+			}
+		}, 300);
+
+	} catch(e){}
+});
+</script>

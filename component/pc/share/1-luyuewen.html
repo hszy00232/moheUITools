@@ -1,0 +1,50 @@
+<style>
+	.mohe-demo .mh-share{
+		display: inline-block;
+		width: 20px;
+		height: 18px;
+		overflow: hidden;
+		text-indent: 99em;
+		background: url(http://p2.qhimg.com/t01cb7e88c21292a92b.png) no-repeat;
+		_background: url(http://p1.qhimg.com/t01361007d7c0a4a2c8.png) no-repeat;
+		margin: 0 3px 0 0;
+	}
+	.mohe-demo .mh-sina{
+		background-position: -32px 0px;
+	}
+	.mohe-demo .mh-tqq{
+		background-position: -64px 0px;
+	}
+	.mohe-demo .mh-qzone{
+		background-position: -95px 0px;
+	}
+</style>
+<div class="mohe-demo">
+	<a href="http://service.weibo.com/share/share.php?title=%desc%&url=%url%&pic=%pic%&ralateUid=&searchPic=false" class="mh-share js-share mh-sina" data-type="sina">
+		分享到新浪微博
+	</a>
+	<a href="http://share.v.t.qq.com/index.php?c=share&a=index&url=%url%&title=%desc%&pic=%pic%&searchPic=false" class="mh-share js-share mh-tqq" data-type="tqq">
+		分享到腾讯微博
+	</a>
+	<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%url%&desc=%desc%&summary=&pics=%pic%&site=360%E6%90%9C%E7%B4%A2&title=360%E6%90%9C%E7%B4%A2&searchPic=false" class="mh-share js-share mh-qzone" data-type="qzone">
+		分享到QQ空间
+	</a>
+</div>
+<script>
+	_loader.use('jquery',function(){
+		var context = $('.mohe-demo');
+		/**
+		 * [点击分享]
+		 */
+		$('.js-share',context).click(function(e){
+			e.preventDefault();
+			var t = $(this),
+				type = t.attr('data-type'),
+				descArr = ['文案一','文案二'],
+				desc = '',
+				url = location.href;
+			desc = descArr[Math.floor(Math.random()*2)];
+			window.open(t.attr('href').replace('%desc%',encodeURIComponent(desc)).replace('%url%',encodeURIComponent(url)).replace('%pic%',''));
+		});
+	});
+</script>

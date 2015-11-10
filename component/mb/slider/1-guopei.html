@@ -1,0 +1,460 @@
+<style>
+#mohe-demo .mh-prog-episode{
+	background: #141414;
+	color: #fff;
+}
+
+/* 切换TAB */
+#mohe-demo .mh-tabs{
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	padding-left: 10px;
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+}
+#mohe-demo .mh-tabs-inner{
+	position: absolute;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	white-space: nowrap;
+	background: #1e1e1e;
+}
+#mohe-demo .mh-tabs-inner .mh-item{
+	display: block;
+	width: 70px;
+	text-align: center;
+	color: #999;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-top: 1px solid #1e1e1e;
+}
+#mohe-demo .mh-tabs-inner .mh-item.mh-active{
+	color: #3eaf1e;
+	background: #141414;
+}
+
+/* 切换view */
+
+#mohe-demo .mh-views{
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+}
+#mohe-demo .mh-views-inner{
+	position: absolute;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	white-space: nowrap;
+	width: 1000%; /* 根据内容个数需重置此值 */
+}
+#mohe-demo .mh-views-inner .mh-view{
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+	flex:1;
+	width: 1%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-top: 10px;
+}
+
+/* 内容列表 */
+#mohe-demo .mh-flex{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+
+#mohe-demo .mh-period-list li{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 10px 10px;
+}
+
+#mohe-demo .mh-period-list .mh-date{
+	width: 70px;
+	text-align: center;
+}
+#mohe-demo .mh-period-list .mh-date > span{
+	display: block;
+	margin: 0 auto;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 30px;
+	background: #333333;
+}
+#mohe-demo .mh-period-list .mh-info{
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+	flex:1;
+	width: 1%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #333333;
+	background: #1e1e1e;
+	padding: 0px 10px 10px;
+}
+@media only screen and (-webkit-device-pixel-ratio:2){
+	#mohe-demo .mh-period-list .mh-info{
+	border-bottom:none;
+	background-image:linear-gradient(180deg, #333, #333 50%, #333 50%);
+	background-size: 100% 1px;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	}
+}
+#mohe-demo .mh-period-list .mh-name{
+	padding: 5px 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#mohe-demo .mh-period-list .mh-guests{
+	color: #999;
+	margin-left: 10px;
+}
+#mohe-demo .mh-period-list .mh-guests dd{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+</style>
+<div id="mohe-demo" class="g-mohe">
+	<div class="mh-prog-episode">
+		<div class="mh-tabs js-episode-tab">
+			<nav class="mh-tabs-inner">
+				<a href="#" class="mh-item mh-active">10月</a>
+				<a href="#" class="mh-item">9月</a>
+				<a href="#" class="mh-item">8月</a>
+				<a href="#" class="mh-item">7月</a>
+				<a href="#" class="mh-item">6月</a>
+				<a href="#" class="mh-item">5月</a>
+				<a href="#" class="mh-item">4月</a>
+				<a href="#" class="mh-item">3月</a>
+				<a href="#" class="mh-item">2月</a>
+				<a href="#" class="mh-item">1月</a>
+			</nav>
+		</div>
+		<div class="mh-views js-episode-view">
+			<div class="mh-views-inner">
+				<div class="mh-view">
+					<ul class="mh-period-list">
+						<li>
+							<div class="mh-date"><span>10</span></div>
+							<div class="mh-info">
+								<h3 class="mh-name">明星们匪夷所思的养生妙方</h3>
+								<div class="mh-flex">
+									<img src="http://p7.qhimg.com/dm/100_60_100/t01fb600c66cf02e90c.jpg" alt="" width="100" height="60" class="mh-pic"/>
+									<dl class="mh-guests">
+										<dt>嘉宾:</dt>
+										<dd>
+											曲家瑞<span class="mh-gap">/</span>曹西平<span class="mh-gap">/</span>Kid
+										</dd>
+										<dd>
+											300万次播放
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="mh-view">
+					<ul class="mh-period-list">
+						<li>
+							<div class="mh-date"><span>09</span></div>
+							<div class="mh-info">
+								<h3 class="mh-name">明星们匪夷所思的养生妙方</h3>
+								<div class="mh-flex">
+									<img src="http://p7.qhimg.com/dm/100_60_100/t01fb600c66cf02e90c.jpg" alt="" width="100" height="60" class="mh-pic"/>
+									<dl class="mh-guests">
+										<dt>嘉宾:</dt>
+										<dd>
+											曲家瑞<span class="mh-gap">/</span>曹西平<span class="mh-gap">/</span>Kid
+										</dd>
+										<dd>
+											300万次播放
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="mh-view">
+					<ul class="mh-period-list">
+						<li>
+							<div class="mh-date"><span>08</span></div>
+							<div class="mh-info">
+								<h3 class="mh-name">明星们匪夷所思的养生妙方</h3>
+								<div class="mh-flex">
+									<img src="http://p7.qhimg.com/dm/100_60_100/t01fb600c66cf02e90c.jpg" alt="" width="100" height="60" class="mh-pic"/>
+									<dl class="mh-guests">
+										<dt>嘉宾:</dt>
+										<dd>
+											曲家瑞<span class="mh-gap">/</span>曹西平<span class="mh-gap">/</span>Kid
+										</dd>
+										<dd>
+											300万次播放
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="mh-view">
+					<ul class="mh-period-list">
+						<li>
+							<div class="mh-date"><span>07</span></div>
+							<div class="mh-info">
+								<h3 class="mh-name">明星们匪夷所思的养生妙方</h3>
+								<div class="mh-flex">
+									<img src="http://p7.qhimg.com/dm/100_60_100/t01fb600c66cf02e90c.jpg" alt="" width="100" height="60" class="mh-pic"/>
+									<dl class="mh-guests">
+										<dt>嘉宾:</dt>
+										<dd>
+											曲家瑞<span class="mh-gap">/</span>曹西平<span class="mh-gap">/</span>Kid
+										</dd>
+										<dd>
+											300万次播放
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="mh-view">
+					<ul class="mh-period-list">
+						<li>
+							<div class="mh-date"><span>06</span></div>
+							<div class="mh-info">
+								<h3 class="mh-name">明星们匪夷所思的养生妙方</h3>
+								<div class="mh-flex">
+									<img src="http://p7.qhimg.com/dm/100_60_100/t01fb600c66cf02e90c.jpg" alt="" width="100" height="60" class="mh-pic"/>
+									<dl class="mh-guests">
+										<dt>嘉宾:</dt>
+										<dd>
+											曲家瑞<span class="mh-gap">/</span>曹西平<span class="mh-gap">/</span>Kid
+										</dd>
+										<dd>
+											300万次播放
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="mh-view">
+					<ul class="mh-period-list">
+						<li>
+							<div class="mh-date"><span>05</span></div>
+							<div class="mh-info">
+								<h3 class="mh-name">明星们匪夷所思的养生妙方</h3>
+								<div class="mh-flex">
+									<img src="http://p7.qhimg.com/dm/100_60_100/t01fb600c66cf02e90c.jpg" alt="" width="100" height="60" class="mh-pic"/>
+									<dl class="mh-guests">
+										<dt>嘉宾:</dt>
+										<dd>
+											曲家瑞<span class="mh-gap">/</span>曹西平<span class="mh-gap">/</span>Kid
+										</dd>
+										<dd>
+											300万次播放
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="mh-view">
+					<ul class="mh-period-list">
+						<li>
+							<div class="mh-date"><span>04</span></div>
+							<div class="mh-info">
+								<h3 class="mh-name">明星们匪夷所思的养生妙方</h3>
+								<div class="mh-flex">
+									<img src="http://p7.qhimg.com/dm/100_60_100/t01fb600c66cf02e90c.jpg" alt="" width="100" height="60" class="mh-pic"/>
+									<dl class="mh-guests">
+										<dt>嘉宾:</dt>
+										<dd>
+											曲家瑞<span class="mh-gap">/</span>曹西平<span class="mh-gap">/</span>Kid
+										</dd>
+										<dd>
+											300万次播放
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="mh-view">
+					<ul class="mh-period-list">
+						<li>
+							<div class="mh-date"><span>03</span></div>
+							<div class="mh-info">
+								<h3 class="mh-name">明星们匪夷所思的养生妙方</h3>
+								<div class="mh-flex">
+									<img src="http://p7.qhimg.com/dm/100_60_100/t01fb600c66cf02e90c.jpg" alt="" width="100" height="60" class="mh-pic"/>
+									<dl class="mh-guests">
+										<dt>嘉宾:</dt>
+										<dd>
+											曲家瑞<span class="mh-gap">/</span>曹西平<span class="mh-gap">/</span>Kid
+										</dd>
+										<dd>
+											300万次播放
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="mh-view">
+					<ul class="mh-period-list">
+						<li>
+							<div class="mh-date"><span>02</span></div>
+							<div class="mh-info">
+								<h3 class="mh-name">明星们匪夷所思的养生妙方</h3>
+								<div class="mh-flex">
+									<img src="http://p7.qhimg.com/dm/100_60_100/t01fb600c66cf02e90c.jpg" alt="" width="100" height="60" class="mh-pic"/>
+									<dl class="mh-guests">
+										<dt>嘉宾:</dt>
+										<dd>
+											曲家瑞<span class="mh-gap">/</span>曹西平<span class="mh-gap">/</span>Kid
+										</dd>
+										<dd>
+											300万次播放
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="mh-view">
+					<ul class="mh-period-list">
+						<li>
+							<div class="mh-date"><span>01</span></div>
+							<div class="mh-info">
+								<h3 class="mh-name">明星们匪夷所思的养生妙方</h3>
+								<div class="mh-flex">
+									<img src="http://p7.qhimg.com/dm/100_60_100/t01fb600c66cf02e90c.jpg" alt="" width="100" height="60" class="mh-pic"/>
+									<dl class="mh-guests">
+										<dt>嘉宾:</dt>
+										<dd>
+											曲家瑞<span class="mh-gap">/</span>曹西平<span class="mh-gap">/</span>Kid
+										</dd>
+										<dd>
+											300万次播放
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	_loader.add('iscroll_511', 'http://s2.qhimg.com/!17e2dcf2/iscroll_5.1.1.js');
+	_loader.use('zepto,iscroll_511',function(){
+		// 引入时删掉下一行
+		require(['module/iscroll/5.1.1/iscroll'], function(iscroll){
+
+		var context = $("#mohe-demo");
+
+		/* s:节目集数交互 */
+
+		var episodeTabs = $(".js-episode-tab",context).find(".mh-item"),
+			episodeViews = $(".js-episode-view",context).find(".mh-view");
+
+		var tabScroll = new iscroll($(".js-episode-tab",context)[0], {
+			eventPassthrough:true,
+			bounce:true,
+			scrollX: true,
+			scrollY: false,
+			click: iscroll.utils.isBadAndroid
+		});
+
+		var picScroll = new iscroll($(".js-episode-view",context)[0], {
+			eventPassthrough:true,
+			bounce:true,
+			scrollX: true,
+			scrollY: false,
+			momentum: false,
+			snap: true,
+			click: iscroll.utils.isBadAndroid
+		});
+		window.tabScroll = tabScroll;
+		picScroll.on('scrollEnd',function(e){
+			var scrollInfo = this.currentPage,
+				index = scrollInfo.pageX,
+				currTab = episodeTabs.eq(index);
+
+			var isMove = isEdging(currTab), // 判断是否到边界0未到，-1右边，1左边
+				mDistance = Math.ceil(currTab.width());
+
+			currTab.addClass("mh-active").siblings().removeClass("mh-active");
+			if(isMove){
+				tabScroll.scrollBy(isMove*mDistance,0,500);
+			}
+		});
+		episodeTabs.on('click',function(e){
+			e.preventDefault();
+			var t = $(this),
+				index = episodeTabs.index(t);
+
+			var isMove = isEdging(t), // 判断是否到边界0未到，-1右边，1左边
+				mDistance = Math.ceil(t.width());
+
+			t.addClass("mh-active").siblings().removeClass("mh-active");
+			if(isMove){
+				tabScroll.scrollBy(isMove*mDistance,0,500);
+			}
+
+			if(episodeViews.eq(index).length > 0){
+				picScroll.goToPage(index,0,500);
+			}
+		});
+		function isEdging(el){
+			var wrapWidth = context.width(),
+				offsetEl = el.offset(),
+				width = el.width();
+			var elLeftEd = offsetEl.left,
+				elRightEd = offsetEl.left + width;
+			if(elLeftEd <= 0){
+				return 1;
+			}else if(elRightEd >= wrapWidth){
+				return -1;
+			}else{
+				return 0;
+			}
+		}
+
+		// 引入时删掉下一行
+		});
+	});
+</script>

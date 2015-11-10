@@ -1,0 +1,50 @@
+<style>
+	.mohe-demo .mh-img {
+		position: relative;
+		overflow: hidden;
+		display: block;
+		width: 200px;
+		height: 150px;
+		border: 1px solid #eee;
+	}
+	.mohe-demo .mh-img .mh-mask,
+	.mohe-demo .mh-img .mh-info {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 20px;
+	}
+	.mohe-demo .mh-img .mh-mask {
+		background-color: #000;
+		opacity: .5;
+		filter: alpha(opacity=50);
+	}
+	.mohe-demo .mh-img .mh-info {
+		overflow: hidden;
+		line-height: 20px;
+		font-size: 12px;
+		color: #fff;
+		text-align: center;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.mohe-demo .mh-img .mh-ico {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0 3px;
+		font-size: 13px;
+		color: #fff;
+		background-color: #fe434c;
+		border: 1px solid #d82626;
+	}
+</style>
+<div class="mohe-demo">
+	<a class="mh-img" href="##" target="_blank">
+		<img src="http://p3.qhimg.com/t01210f8d5202b3fdc7.jpg" width="200" height="150" />
+		<span class="mh-mask"></span>
+		<span class="mh-info">同性恋猪猪步入婚姻的殿堂</span>
+		<span class="mh-ico">热点</span>
+	</a>
+</div>

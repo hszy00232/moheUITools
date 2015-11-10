@@ -1,0 +1,71 @@
+<style>
+	/*页签*/
+	.mohe-demo .mh-tabs {
+		overflow: hidden;
+		height: 32px;
+		line-height: 32px;
+		background: #f8f8f8 url('data:image/jpg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHCAgICAgICAgICD/2wBDAQcHBw0MDRgQEBgaFREVGiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICD/wAARCAAgAAUDAREAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAII/8QAGRABAAIDAAAAAAAAAAAAAAAAAAEDE1KR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ANRAAAnJXtHQf//Z');
+	}
+	.mohe-demo .mh-tabs .mh-tab {
+		float: left;
+		padding: 0px 30px;
+		border-right: 1px solid #e5e5e5;
+		border-bottom: 1px solid #f8f8f8;
+		text-align: center;
+		cursor: pointer;
+	}
+	.mohe-demo .mh-tabs .mh-active {
+		color: #3ead0e;
+		font-weight: bold;
+		background-color: #fff;
+		border-bottom-color: #fff;
+	}
+
+	/*内容*/
+	.mohe-demo .mh-infos {
+		padding: 10px;
+	}
+	.mohe-demo .mh-infos .mh-info {
+		display: none;
+	}
+	.mohe-demo .mh-infos .mh-active {
+		display: block;
+	}
+</style>
+<div class="mohe-demo">
+	<p style="margin-bottom: 20px;">
+		说明：简化了 CSS 的命名
+	</p>
+	<div class="mohe-wrap">
+		<ul class="mh-tabs gclearfix">
+			<li class="mh-tab mh-active">我是Tab1</li>
+			<li class="mh-tab">我是Tab2</li>
+			<li class="mh-tab">我是Tab3</li>
+		</ul>
+		<div class="mh-infos">
+			<div class="mh-info mh-active">
+				内容一
+			</div>
+			<div class="mh-info">
+				内容二
+			</div>
+			<div class="mh-info">
+				内容三
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+_loader.use("jquery",function(){
+	var root = $('.mohe-demo'),
+			tabs = $('.mh-tab', root),
+			infos = $('.mh-info', root);
+
+	tabs.click(function(e){
+		var idx = $(this).index();
+		tabs.removeClass('mh-active').eq(idx).addClass('mh-active');
+		infos.removeClass('mh-active').eq(idx).addClass('mh-active');
+	});
+
+});
+</script>

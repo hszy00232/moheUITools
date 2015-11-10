@@ -1,0 +1,108 @@
+<style>
+/* list start */
+.mohe-demo .mh-ui-fl{
+	float: left;
+}
+.mohe-demo .mh-ui-fr{
+	float:right;
+}
+.mohe-demo .mh-ui-list{
+	padding: 10px 10px 0px 10px;
+	line-height: 25px;
+}
+.mohe-demo .mh-ui-origin{
+	padding-left:5px;
+	color:green;
+}
+.mohe-demo .mh-ui-cont-time{
+	padding-left: 5px;
+	color: #666;
+}
+.mohe-demo .mh-ui-li-later{
+	display: none;
+}
+.mohe-demo .mh-ui-btn-more{
+	text-align: center;
+	background: #fafafa;
+	padding: 6px 0;
+	margin-top: 10px;
+}
+.mohe-demo .mh-ui-btn-more a {
+	color: #898989;
+	text-decoration: none;
+	display: inline-block;
+	outline: 0;
+}
+.mohe-demo .mh-ui-icon-tri{
+	display: inline-block;
+	background: url(http://p1.qhimg.com/t01033c2c79dc3ceb2f.png) no-repeat -40px -2px;
+	width: 5px;
+	height: 3px;
+	vertical-align: middle;
+	font-size: 0;
+	line-height: 0;
+	margin-left: 6px;
+}
+.mohe-demo .mh-ui-btn-open .mh-ui-icon-tri {
+	background-position: -46px -2px;
+}
+</style>
+<div class="mohe-demo">
+	<div class="cont mohe-wrap">
+		<ul class="mh-ui-list">
+			<li class="gclearfix">
+				<p class="mh-ui-fl">
+					<a href="#">那么问题来了？</a>
+					<span class="mh-ui-origin">新东方</span>
+				</p>
+				<span class="mh-ui-fr mh-ui-cont-time">10天前</span>
+			</li>
+			<li class="gclearfix">
+				<p class="mh-ui-fl">
+					<a href="#">学挖掘机到底哪家强</a>
+					<span class="mh-ui-origin">新东方</span>
+				</p>
+				<span class="mh-ui-fr mh-ui-cont-time">10天前</span>
+			</li>
+			<li class="mh-ui-li-later gclearfix">
+				<p class="mh-ui-fl">
+					<a href="#">当然就到新东方</a>
+					<span class="mh-ui-origin">新东方</span>
+				</p>
+				<span class="mh-ui-fr mh-ui-cont-time">10天前</span>
+			</li>
+			<li class="mh-ui-li-later gclearfix">
+				<p class="mh-ui-fl">
+					<a href="#">学厨师，学英语，都可以到新东方</a>
+					<span class="mh-ui-origin">新东方</span>
+				</p>
+				<span class="mh-ui-fr mh-ui-cont-time">10天前</span>
+			</li>
+		</ul>
+		<div class="mh-ui-btn-more">
+			<a href="##"><span class="mh-ui-btn-txt" data-html="更多">更多</span><i class="mh-ui-icon-tri"></i></a>
+		</div>
+	</div>
+</div>
+<script>
+_loader.use("jquery",function(){
+	var context = $(".mohe-demo"),
+		li_later = $('.mh-ui-li-later',context),
+		btn_more = $('.mh-ui-btn-more',context),
+		btn_txt = $('.mh-ui-btn-txt',context),
+		btn_icon = $('.mh-ui-icon-tri',context);
+
+	$(".mh-ui-btn-more").on("click",function(e){
+		e.preventDefault();
+		if(!btn_more.hasClass("mh-ui-btn-open")){
+			btn_more.addClass("mh-ui-btn-open");
+			btn_txt.text("收起");
+			li_later.show();
+		}else{
+			btn_more.removeClass("mh-ui-btn-open");
+			btn_txt.text(btn_txt.attr("data-html"));
+			li_later.hide();
+		}
+	});
+});
+</script>

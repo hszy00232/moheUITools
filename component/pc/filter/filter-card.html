@@ -1,0 +1,183 @@
+<style>
+/* filter部分 */
+.mohe-demo .mh-filters{
+	margin-bottom: 15px;
+}
+.mohe-demo .mh-filter-cate{
+	line-height: 19px;
+	margin-right: -16px;
+	padding-bottom: 6px;
+	*zoom:1;
+}
+.mohe-demo .mh-filter-cate:after{
+	display: block;
+	clear: both;
+	content: "";
+	visibility: hidden;
+	line-height: 0;
+}
+.mohe-demo .mh-filter-cate dt{
+	float: left;
+	color: #666;
+}
+.mohe-demo .mh-filter-cate dd{
+	overflow: hidden;
+	*zoom: 1;
+}
+.mohe-demo .mh-filter-cate .mh-cate{
+	float: left;
+	margin-right: 16px;
+	_margin-right: 15px;
+	margin-bottom: 4px;
+	padding:0px 3px;
+	text-decoration: none;
+	white-space: nowrap;
+	outline: none;
+}
+.mohe-demo .mh-filter-cate .mh-cate:hover{
+	text-decoration: underline;
+}
+.mohe-demo .mh-filter-cate .mh-cate.active{
+	background: #0063c8;
+	color:#fff;
+	border-radius: 2px;
+}
+.mohe-demo .mh-filter-cate .mh-cate.active:hover{
+	text-decoration: none;
+}
+/* 正在加载 */
+.mohe-demo .mh-load-state{
+	height: 174px;
+	padding: 100px 0;
+	line-height: 32px;
+	color: #333;
+	font-size: 14px;
+	text-align: center;
+	display: none;
+}
+.mohe-demo .mh-loading{
+	display: block;
+}
+.mohe-demo .mh-loaded{
+	display: none;
+}
+.mohe-demo .mh-load-default{
+	height: 54px;
+	padding:34px 0;
+}
+.mohe-demo .mh-load-default .mh-loading{
+	display: none;
+}
+.mohe-demo .mh-load-default .mh-loaded{
+	display: block;
+}
+.mohe-demo .mh-ico-loading{
+	display: inline-block;
+	*zoom:1;
+	*display:inline;
+	width: 32px;
+	height: 32px;
+	font-size: 0;
+	line-height:32px;
+	vertical-align: middle;
+	background: url(http://p7.qhimg.com/t01d48f0da2e6a37bfe.gif) no-repeat left top;
+	margin-right: 10px;
+}
+.mohe-demo .mh-view{
+	font-size: 14px;
+	text-align: center;
+	padding-bottom: 20px;
+}
+</style>
+
+<div class="mohe-demo">
+	<div class="g-padding">
+		<div class="mh-filters">
+			<dl class="mh-filter-cate js-mh-filter-cate" data-cate="filter1">
+				<dt>按类别ss1：</dt>
+				<dd class="g-clearfix">
+					<a href="#filter1" class="mh-cate active js-mh-filter-item">全部</a>
+					<a href="#filter1" class="mh-cate js-mh-filter-item">中国</a>
+					<a href="#filter1" class="mh-cate js-mh-filter-item">德国</a>
+					<a href="#filter1" class="mh-cate js-mh-filter-item">巴西</a>
+					<a href="#filter1" class="mh-cate js-mh-filter-item">荷兰</a>
+					<a href="#filter1" class="mh-cate js-mh-filter-item">中国</a>
+					<a href="#filter1" class="mh-cate js-mh-filter-item">德国</a>
+					<a href="#filter1" class="mh-cate js-mh-filter-item">巴西</a>
+					<a href="#filter1" class="mh-cate js-mh-filter-item">荷兰</a>
+					<a href="#filter1" class="mh-cate js-mh-filter-item">荷兰</a>
+				</dd>
+			</dl>
+			<dl class="mh-filter-cate js-mh-filter-cate" data-cate="filter1">
+				<dt>按类别2：</dt>
+				<dd class="g-clearfix">
+					<a href="#filter1" class="mh-cate  active js-mh-filter-item">全部</a>
+					<a href="#filter1" class="mh-cate js-mh-filter-item">中国</a>
+					<a href="#filter1" class="mh-cate js-mh-filter-item">德国</a>
+					<a href="#filter1" class="mh-cate js-mh-filter-item">巴西</a>
+					<a href="#filter1" class="mh-cate js-mh-filter-item">荷兰</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="mh-load-state js-mh-load">
+			<div class="mh-loading">
+				<i class="mh-ico-loading"></i>正在为您努力加载中...
+			</div>
+			<div class="mh-loaded">
+				矮油，没有找到符合条件的电视剧，快试试其他分类吧~
+			</div>
+		</div>
+		<div class="mh-view js-mh-view">
+			<!-- 这里可以放异步模板-->
+		</div>
+	</div>
+</div>
+
+<script>
+_loader.use("jquery",function(){
+	var context = $(".mohe-demo"),
+		filterCate = $(".js-mh-filter-cate",context),
+		filterItem = $(".js-mh-filter-item",context),
+		loadState = $(".js-mh-load",context),
+		viewCont = $(".js-mh-view",context);
+
+	/* 设置提交Data */
+	var data = {
+		"query"  : "yourQuery",
+		"url"    : "yourUrl",
+		"type"   : "yourType",
+		"src"    : "onebox",
+		"addInfo": "yourAddInfo",
+		"tpl"    : 1
+	};
+
+	/* 点击分类发送异步请求 */
+	filterItem.on('click',function(e){
+		e.preventDefault();
+		var me = $(this);
+		me.addClass("active")
+		.siblings('.js-mh-filter-item')
+		.removeClass("active");
+		data = setAddInfo(1);
+		testDemo(data.addInfo);
+	});
+
+	/* 设置data.addInfo */
+	function setAddInfo(currPage){
+		var addInfoArr = [];
+		$.each(filterCate,function(item,index){
+			addInfoArr.push($(index).data('cate')+":"+$.trim($(index).find('.active').text()))
+			return addInfoArr;
+		});
+		addInfoArr.push("limit:8","page:"+currPage);
+		data.addInfo = addInfoArr.join("|");
+		return data;
+	};
+
+	/* 演示 */
+	function testDemo(info){
+		loadState.hide();
+		viewCont.html(info).show();
+	};
+});
+</script>

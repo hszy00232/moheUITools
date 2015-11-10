@@ -1,0 +1,55 @@
+<style>
+	#mohe-demo{
+		border: 1px solid #eaeaea;
+		padding: 10px;
+	}
+	#mohe-demo .mh-ui-list{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		height: 20px;
+		overflow: hidden;
+	}
+	#mohe-demo .mh-ui-list .mh-ui-type{
+		padding-right: 8px;
+		color: #999;
+	}
+	#mohe-demo .mh-ui-list .mh-ui-flex{
+		-webkit-box-flex:1;
+		-webkit-flex:1;
+		flex:1;
+	}
+	#mohe-demo .mh-ui-list .mh-ui-item{
+		display: block;
+		height: 100%;
+		color: #222;
+	}
+</style>
+<div id="mohe-demo" class="g-mohe">
+	<div class="mh-ui-list">
+		<h4 class="mh-ui-type">同类产品</h4>
+		<ul class="mh-ui-flex">
+			<li>
+				<a href="#" class="g-aline mh-ui-item">
+					1.国富日日收益货币B
+				</a>
+			</li>
+			<li>
+				<a href="#" class="g-aline mh-ui-item">
+					2.国富日日收益货币B
+				</a>
+			</li>
+			<li>
+				<a href="#" class="g-aline mh-ui-item">
+					3.国富日日收益货币B
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+	_loader.add("Marquee","http://s9.qhimg.com/static/bd8813abde62711f.js");
+	_loader.use("Marquee",function(){
+		new Marquee({root:"#mohe-demo .mh-ui-list",wrap:"#mohe-demo .mh-ui-flex",item:"#mohe-demo .mh-ui-flex li"});
+	});
+</script>

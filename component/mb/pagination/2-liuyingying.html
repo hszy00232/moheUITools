@@ -1,0 +1,163 @@
+<style>
+	#mohe-demo .mh-ui-nav-page{
+		height: 40px;
+		line-height: 40px;
+		border-top: 1px solid #eaeaea;
+		background-color: #fafafa;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+	}
+	#mohe-demo .mh-ui-op-pre,
+	#mohe-demo .mh-ui-op-next {
+		display: block;
+		text-align: center;
+		overflow: hidden;
+		-webkit-box-flex: 2.0;
+		width: 28%;
+		-webkit-flex: 2.0;
+		flex: 2.0;
+		height: 40px;
+	}
+
+	#mohe-demo .mh-ui-op-pre:after,
+	#mohe-demo .mh-ui-op-next:after {
+		content: '';
+		display: inline-block;
+		width: 7px;
+		height: 7px;
+		border-bottom: 2px solid #666;
+		border-right: 2px solid #666;
+		-webkit-transform: rotate(135deg);
+		transform: rotate(135deg);
+		margin-left: 5px;
+		margin-top: 15px;
+	}
+	#mohe-demo .disabled:after {
+		border-bottom: 2px solid #ccc;
+		border-right: 2px solid #ccc;
+			}
+	#mohe-demo .mh-ui-op-next:after{
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		margin-left: -2px;
+	}
+	#mohe-demo .mh-ui-op-pre{
+		border-right: 1px solid #ddd;
+	}
+	#mohe-demo .mh-ui-op-next {
+		border-left: 1px solid #ddd;
+	}
+	#mohe-demo .mh-ui-page {
+		display: block;
+		-webkit-box-flex: 3.0;
+		width: 44%;
+		-webkit-flex: 3.0;
+		flex: 3.0;
+		text-align: center;
+		font-size: 13px;
+		color: #b4b4b4;
+		position: relative;
+	}
+	#mohe-demo .mh-ui-page-cur{
+		color: #333;
+		text-align: left;
+	}
+	#mohe-demo .mh-ui-page-total:after{
+		content: '';
+		display:inline-block;
+		overflow:hidden;
+		width:0px;
+		height:0px;
+		padding:0;
+		font-size:0;
+		border:5px dashed transparent;
+		border-top-style:solid;
+		border-top-color:#aaa;
+		z-index: 1;
+		margin-left:4px;
+		margin-bottom: -3px;
+	}
+	#mohe-demo .mh-ui-page select{
+		width: 100%;
+		height: 40px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: 1;
+	}
+	#mohe-demo .mh-ui-page .mh-ui-page-total{
+		position: relative;
+	}
+</style>
+<div id="mohe-demo" class="g-mohe">
+	<nav class="mh-ui-nav-page">
+		<a href="#prev" rev="prev" class="mh-ui-op-pre js-mh-ui-op-page disabled"></a>
+		<span class="mh-ui-page">
+			<span class="mh-ui-page-cur js-mh-ui-page-cur" data-max="10">1</span><span class="mh-ui-page-total">/10</span>
+			<select class="js-mh-ui-page-sel">
+				<option val='1'>1</option>
+				<option val='2'>2</option>
+				<option val='3'>3</option>
+				<option val='4'>4</option>
+				<option val='5'>5</option>
+				<option val='6'>6</option>
+				<option val='7'>7</option>
+				<option val='8'>8</option>
+				<option val='9'>9</option>
+				<option val='10'>10</option>
+			</select>
+		</span>
+		<a href="#next" rev="next" class="mh-ui-op-next js-mh-ui-op-page"></a>
+	</nav>
+</div>
+<script type="text/javascript">
+	_loader.add('zepto','http://s0.qhimg.com/!26d721ef/zepto_1.1.2.js');
+	_loader.use('zepto',function(){
+		var scope = $('#mohe-demo'),
+			pageSel = $('.js-mh-ui-page-sel',scope),
+			pageText = $('.js-mh-ui-page-cur',scope);
+
+		/* 分页 */
+		function turnToPage(num){
+			var $curpage = $(".js-mh-ui-page-cur",scope),
+				$btns = $(".js-mh-ui-op-page",scope),
+				$prev = $btns.filter("[rev='prev']"),
+				$next = $btns.filter("[rev='next']"),
+				max = parseInt($curpage.data("max"),10);
+			if(num <= 1){
+				$next.removeClass("disabled");
+				$prev.addClass("disabled");
+			}else if(num >= max){
+				$prev.removeClass("disabled");
+				$next.addClass("disabled");
+			}else{
+				$prev.removeClass("disabled");
+				$next.removeClass("disabled");
+			}
+			$curpage.text(num);
+			$('.js-mh-ui-page-sel option[val='+num+']',scope).prop('selected',true);
+		}
+		scope.on("click",".js-mh-ui-op-page",function(){
+			var $self = $(this),
+				dir = $self.attr("rev"),
+				$curpage = $(".js-mh-ui-page-cur",scope),
+				curpage = parseInt($curpage.text(),10),
+				$screens = $(".js-mh-ui-wrap",scope);
+			if(!$self.hasClass("disabled")){
+				$screens.filter("[data-page='"+curpage+"']").hide();
+				curpage = curpage + (dir == "next"?1:-1);
+				$screens.filter("[data-page='"+curpage+"']").show();
+				turnToPage(curpage);
+			}
+		});
+
+		/*下拉框值变化时改变数字和箭头的状态*/
+		pageSel.change(function(){
+			var curVal = $(this).val()
+			pageText.text(curVal);
+			turnToPage(curVal)
+		})
+	})
+</script>

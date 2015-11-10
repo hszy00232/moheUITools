@@ -1,0 +1,31 @@
+<style type="text/css">
+	.mohe-demo .g-card-foot{
+		text-align: center;
+	}
+</style>
+<div class="mohe-demo">
+	<div class="g-card g-shadow">
+		<div class="js-mh-page-num" data-page="10"></div>
+		<div class="g-card-foot js-mh-page">
+			<!-- 这里生成翻页 -->
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+_loader.add("haosouPager","http://s4.qhimg.com/static/829be658513aea47/haosouPager.js");
+_loader.use("jquery,haosouPager",function(){
+	var context = $(".mohe-demo"),
+		pageCont = $(".js-mh-page",context);
+
+	/* 获取页数 */
+	var pageTotal = $(".js-mh-page-num",context).data("page");
+	/* 生成翻页 */
+	pageTotal && pageCont.haosouPager({
+		totalPage: pageTotal,// 总页数
+		currPage: 1, // 当前页数
+		callback: function(currPage){ // 翻页dom创建成功回调，currPage为当前点击的页数
+			alert("第"+currPage+"页");
+		}
+	}).show();
+});
+</script>
